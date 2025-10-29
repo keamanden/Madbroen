@@ -52,7 +52,26 @@
     <button type="submit">Send</button>
 </form>
 
+<!--felter til redigering af egne oplysninger-->
 
 
-</body>
+<form th:action="@{/input}" th:object="${user}" method="post">
+    <label>Mine oplysninger </label>
+    <div th:each="val, iterStat : *{values}">
+        <label th:for="${'values_' + iterStat.index}">Indtast [[${iterStat.index + 1}]]:</label>
+        <input type="text" th:field="*{values[__${iterStat.index}__]}" />
+        <br/>
+    </div>
+    <button type="submit">Gem oplysninger</button>
+</form>
+
+<!--Virksomhedder kan inputte antal paller-->
+
+<form th:action="@{/input}" th:object="${donorCompany}" method="post">
+    <label for="input">Indtast antal paller:</label>
+    <input type="text" th:field="*{input}" />
+    <button type="submit">Gem</button>
+</form>
+
+
 </html>
