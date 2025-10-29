@@ -6,8 +6,41 @@
 </head>
 <body>
 
+<!--elementer kun til donocompany-->
+
+<div th:if="${userType == 'donorCompany'}">
+    <!--Virksomhedder kan inputte antal paller-->
+
+    <form th:action="@{/input}" th:object="${donorCompany}" method="post">
+        <label for="input">Indtast antal paller:</label>
+        <input type="text" th:field="*{input}" />
+        <button type="submit">Gem</button>
+    </form>
+
+</div>
 
 
+<!--elementer kun soupkitchen-->
+
+<div th:if="${userType == 'soupKitchen'}">
+    <!--Dropdown menu til suppekøkken-->
+
+    <form class = "needNotNeedSoupkitchen" th:action="@{/SoupKitchen}" th:object="${soupKitchen}" method="post">
+        <label>Angiv behov for mad:</label>
+        <select th:field="*{statusNeednotneed}">
+            <option th:value="true">Mangler mad</option>
+            <option th:value="false">Mangler IKKE mad</option>
+        </select>
+        <button type="submit">Send</button>
+    </form>
+
+</div>
+
+
+
+<!--elementer kun til distributioncompany-->
+
+<div th:if="${userType == 'distributionCompany'}">
 <!--Tables med butik/antal paller og suppekøkkener/adresse-->
 <table class="foodForCollectionTable" border="1">
     <caption>Mad tilgængeligt for afhæntning</caption>
@@ -40,38 +73,7 @@
     </tr>
     </tbody>
 </table>
-
-<!--Dropdown menu til suppekøkken-->
-
-<form class = "needNotNeedSoupkitchen" th:action="@{/SoupKitchen}" th:object="${soupKitchen}" method="post">
-    <label>Angiv behov for mad:</label>
-    <select th:field="*{statusNeednotneed}">
-        <option th:value="true">Mangler mad</option>
-        <option th:value="false">Mangler IKKE mad</option>
-    </select>
-    <button type="submit">Send</button>
-</form>
-
-<!--felter til redigering af egne oplysninger-->
-
-
-<form th:action="@{/input}" th:object="${user}" method="post">
-    <label>Mine oplysninger </label>
-    <div th:each="val, iterStat : *{values}">
-        <label th:for="${'values_' + iterStat.index}">Indtast [[${iterStat.index + 1}]]:</label>
-        <input type="text" th:field="*{values[__${iterStat.index}__]}" />
-        <br/>
-    </div>
-    <button type="submit">Gem oplysninger</button>
-</form>
-
-<!--Virksomhedder kan inputte antal paller-->
-
-<form th:action="@{/input}" th:object="${donorCompany}" method="post">
-    <label for="input">Indtast antal paller:</label>
-    <input type="text" th:field="*{input}" />
-    <button type="submit">Gem</button>
-</form>
+</div>
 
 
 </html>
