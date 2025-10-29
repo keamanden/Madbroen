@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="dasnoardstyle" th:href="@{/css/dashboardstyle.css}"/>
 </head>
 <body>
 
-<!--elementer kun til donocompany-->
+<!--elementer kun til donorcompany-->
 
 <div th:if="${userType == 'donorCompany'}">
     <!--Virksomhedder kan inputte antal paller-->
@@ -40,39 +41,39 @@
 
 <!--elementer kun til distributioncompany-->
 
-<div th:if="${userType == 'distributionCompany'}">
-<!--Tables med butik/antal paller og suppekøkkener/adresse-->
-<table class="foodForCollectionTable" border="1">
-    <caption>Mad tilgængeligt for afhæntning</caption>
-    <thead>
-    <tr>
-        <th>Butik</th>
-        <th>Paller</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="donorCompany : ${donorCompanys}">
-        <td th:text="${donorCompany.address}">Adresse</td>
-        <td th:text="${donorCompany.palletCount}">Antal</td>
-    </tr>
-    </tbody>
-</table>
+<div class="wrapperTables" th:if="${userType == 'distributionCompany'}">
+    <!--Tables med butik/antal paller og suppekøkkener/adresse-->
+    <table class="foodForCollectionTable" border="1">
+        <caption>Mad tilgængeligt for afhæntning</caption>
+        <thead>
+        <tr>
+            <th>Butik</th>
+            <th>Paller</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="donorCompany : ${donorCompanys}">
+            <td th:text="${donorCompany.address}">Adresse</td>
+            <td th:text="${donorCompany.palletCount}">Antal</td>
+        </tr>
+        </tbody>
+    </table>
 
-<table class="placesToDeliverFood" border="1">
-    <caption>Steder maden kan afleveres</caption>
-    <thead>
-    <tr>
-        <th>Suppekøkken adresse</th>
-        <th>Behov for mad</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="soupKitchen : ${soupKitchens}">
-        <td th:text="${soupKitchen.address}">Adresse</td>
-        <td th:text="${soupKitchen.statusNeedNotNeed}">Antal</td>
-    </tr>
-    </tbody>
-</table>
+    <table class="placesToDeliverFood" border="1">
+        <caption >Steder maden kan afleveres</caption>
+        <thead>
+        <tr class="single-line">
+            <th>Suppekøkken adresse</th>
+            <th>Behov for mad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="soupKitchen : ${soupKitchens}">
+            <td th:text="${soupKitchen.address}">Adresse</td>
+            <td th:text="${soupKitchen.statusNeedNotNeed}">behov for mad</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 
