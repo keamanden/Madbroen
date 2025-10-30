@@ -9,7 +9,7 @@
 
 <!--elementer kun til donorcompany-->
 
-<div class="donorCompanyPallets" th:if="${userType == 'donorCompany'}">
+<div class="donorCompanyPallets" th:if="${user.userType == 'donorCompany'}">
     <!--Virksomhedder kan inputte antal paller-->
 
     <form th:action="@{/palletCount}" th:object="${user}" method="post">
@@ -23,12 +23,12 @@
 
 <!--elementer kun soupkitchen-->
 
-<div class="dropDownSoupKitchen" th:if="${userType == 'soupKitchen'}">
+<div class="dropDownSoupKitchen" th:if="${user.userType == 'soupKitchen'}">
     <!--Dropdown menu til suppekøkken-->
 
-    <form class = "needNotNeedSoupkitchen" th:action="@{/SoupKitchen}" th:object="${soupKitchen}" method="post">
-        <label>Angiv behov for mad:</label>
-<!--        <select th:field="*{statusNeednotneed}">-->
+    <form class = "needNotNeedSoupkitchen" th:action="@{/updateUser}" th:object="${user}" method="post">
+        <label for="statusNeedNotNeed">Angiv behov for mad:</label>
+        <select id="statusNeedNotNeed" th:field="*{statusNeedNotNeed}">
             <option th:value="true">Mangler mad</option>
             <option th:value="false">Mangler IKKE mad</option>
         </select>
@@ -40,10 +40,10 @@
 
 
 <!--elementer kun til distributioncompany-->
-<div class="layoutDashboardDistribution" th:if="${userType == 'distributionCompany'}">
+<div class="layoutDashboardDistribution" th:if="${user.userType == 'distributionCompany'}">
 <div class="wrapperTablesDistribution containerDistribution" >
     <!--Tables med butik/antal paller og suppekøkkener/adresse-->
-    <table class="foodForCollectionTable" border="1">
+    <table class="foodForCollectionTable" >
         <caption>Mad tilgængeligt for afhæntning</caption>
         <thead>
         <tr>
