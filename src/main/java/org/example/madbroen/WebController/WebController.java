@@ -5,13 +5,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.example.madbroen.TestUser;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class WebController {
 
 
-
+    @GetMapping("/{page}")
+    public String dynamic(@PathVariable String page) {
+        return page;
+    }
 
     @GetMapping("/dashboard")
     public String index() {

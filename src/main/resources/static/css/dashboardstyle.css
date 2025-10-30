@@ -58,7 +58,7 @@ td:nth-child(even){
 .vertical-line {
     border-left: 2px solid rgb(4, 4, 4);
     height: 600px;
-    position: fixed;
+    position: absolute;
     right: 795px;
     bottom: 0;
 
@@ -71,7 +71,7 @@ td:nth-child(even){
     display: flex;
     flex-direction: column;
     width: 300px;
-    position: fixed;
+    position: absolute;
     bottom: 200px;
 }
 
@@ -89,7 +89,7 @@ td:nth-child(even){
 
 .dropDownSoupKitchen{
     display: flex;
-    position: fixed;
+    position: absolute;
     right: 200px;
     bottom: 500px;
 }
@@ -98,7 +98,7 @@ td:nth-child(even){
 
 .donorCompanyPallets{
     display: flex;
-    position: fixed;
+    position: absolute;
     right: 200px;
     bottom: 500px;
 }
@@ -110,12 +110,8 @@ td:nth-child(even){
     width: 100vw;
     margin: 0px;
     bottom: 599px;
-    position: fixed;
+    position: absolute;
     border: none;
     left: 0px;
 }
 
-body {
-    overflow-x: auto;
-    min-width: 900px;
-}
