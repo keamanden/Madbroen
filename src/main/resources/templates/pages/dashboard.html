@@ -9,7 +9,7 @@
 
 <!--elementer kun til donorcompany-->
 
-<div th:if="${userType == 'donorCompany'}">
+<div class="donorCompanyPallets" th:if="${userType == 'donorCompany'}">
     <!--Virksomhedder kan inputte antal paller-->
 
     <form th:action="@{/input}" th:object="${donorCompany}" method="post">
@@ -23,7 +23,7 @@
 
 <!--elementer kun soupkitchen-->
 
-<div th:if="${userType == 'soupKitchen'}">
+<div class="dropDownSoupKitchen" th:if="${userType == 'soupKitchen'}">
     <!--Dropdown menu til suppekøkken-->
 
     <form class = "needNotNeedSoupkitchen" th:action="@{/SoupKitchen}" th:object="${soupKitchen}" method="post">
@@ -32,7 +32,7 @@
             <option th:value="true">Mangler mad</option>
             <option th:value="false">Mangler IKKE mad</option>
         </select>
-        <button type="submit">Send</button>
+        <button type="submit">Gem</button>
     </form>
 
 </div>
@@ -78,6 +78,37 @@
 </div>
 <!--vertikal linje-->
 <div class="vertical-line"></div>
+
+<!--Form til at ændre i egne oplysninger-->
+
+<div>
+
+    <form th:action="@{/form}" th:object="${User}" method="post" class="form-column">
+
+        <label>Navn:</label>
+        <input type="text" th:field="*{name}" />
+
+        <label>adresse:</label>
+        <input type="text" th:field="*{address}" />
+
+        <label>telefon nummer:</label>
+        <input type="number" step="0.01" th:field="*{phoneNumber}" />
+
+        <label>Email:</label>
+        <input type="text" th:field="*{email}" />
+
+        <label>Cvr:</label>
+        <input type="text" th:field="*{CVR}" />
+
+        <label>Kontakt person:</label>
+        <input type="text" th:field="*{mainContactName}" />
+
+
+
+        <button type="submit">Gem ændringer</button>
+    </form>
+
+</div>
 
 
 

@@ -63,5 +63,42 @@ td:nth-child(even){
     bottom: 0;
 
 
+/*Styling af ændring af egne oplysninger*/
 
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    position: fixed;
+    bottom: 200px;
+}
+
+.form-column label {
+    bottom: 0px;
+}
+
+.form-column input {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/*styling af dropdown til soupkitchen*/
+
+
+.dropDownSoupKitchen{
+    display: flex;
+    position: fixed;
+    right: 200px;
+    bottom: 500px;
+}
+
+/*styling af indtastning af paller donocompanuy*/
+
+.donorCompanyPallets{
+    display: flex;
+    position: fixed;
+    right: 200px;
+    bottom: 500px;
 }
