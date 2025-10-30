@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/dashboardstyle.css}"/>
+</head>
+<body>
+
+<!--elementer kun til donorcompany-->
+
+<div class="donorCompanyPallets" th:if="${user.userType == 'donorCompany'}">
+    <!--Virksomhedder kan inputte antal paller-->
+
+    <form th:action="@{/palletCount}" th:object="${user}" method="post">
+        <label for="palletCount">Indtast antal paller:</label>
+        <input type="text" th:field="*{palletCount}" id="palletCount" />
+        <button type="submit">Gem</button>
+    </form>
+
+</div>
+
+
+<!--elementer kun soupkitchen-->
+
+<div class="dropDownSoupKitchen" th:if="${user.userType == 'soupKitchen'}">
+    <!--Dropdown menu til suppekøkken-->
+
+    <form class = "needNotNeedSoupkitchen" th:action="@{/updateUser}" th:object="${user}" method="post">
+        <label for="statusNeedNotNeed">Angiv behov for mad:</label>
+        <select id="statusNeedNotNeed" th:field="*{statusNeedNotNeed}">
+            <option th:value="true">Mangler mad</option>
+            <option th:value="false">Mangler IKKE mad</option>
+        </select>
+        <button type="submit">Gem</button>
+    </form>
+
+</div>
+
+
+
+<!--elementer kun til distributioncompany-->
+<div class="layoutDashboardDistribution" th:if="${user.userType == 'distributionCompany'}">
+<div class="wrapperTablesDistribution containerDistribution" >
+    <!--Tables med butik/antal paller og suppekøkkener/adresse-->
+    <table class="foodForCollectionTable" >
+        <caption>Mad tilgængeligt for afhæntning</caption>
+        <thead>
+        <tr>
+            <th>Butik</th>
+            <th>Paller</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="donorCompany : ${donorCompanys}">
+            <td th:text="${donorCompany.address}">Adresse</td>
+            <td th:text="${donorCompany.palletCount}">Antal</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="placesToDeliverFood" border="1">
+        <caption >Steder maden kan afleveres</caption>
+        <thead>
+        <tr class="single-line">
+            <th>Suppekøkken adresse</th>
+            <th>Behov for mad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="soupKitchen : ${soupKitchens}">
+            <td th:text="${soupKitchen.address}">Adresse</td>
+            <td th:text="${soupKitchen.statusNeedNotNeed}">behov for mad</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+<!--vertikal linje-->
+<div class="vertical-line"></div>
+
+<!--Form til at ændre i egne oplysninger-->
+
+<div>
+
+    <form th:action="@{/form}" th:object="${user}" method="post" class="form-column">
+
+        <label>Navn:</label>
+        <input type="text" th:field="*{name}" />
+
+        <label>adresse:</label>
+        <input type="text" th:field="*{address}" />
+
+        <label>telefon nummer:</label>
+        <input type="number" step="0.01" th:field="*{phoneNumber}" />
+
+        <label>Email:</label>
+        <input type="text" th:field="*{email}" />
+
+        <label>Cvr:</label>
+        <input type="text" th:field="*{CVR}" />
+
+        <label>Kontakt person:</label>
+        <input type="text" th:field="*{mainContactName}" />
+
+
+
+        <button type="submit">Gem ændringer</button>
+    </form>
+
+</div>
+
+
+
+</body>
+</html>
