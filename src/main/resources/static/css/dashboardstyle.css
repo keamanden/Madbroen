@@ -112,4 +112,5 @@ td:nth-child(even){
     bottom: 599px;
     position: fixed;
     border: none;
+    left: 0px;
 }
