@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="dasboardstyle" th:href="@{/css/dashboardstyle.css}"/>
+</head>
+<body>
+
+<!--elementer kun til donorcompany-->
+
+<div th:if="${userType == 'donorCompany'}">
+    <!--Virksomhedder kan inputte antal paller-->
+
+    <form th:action="@{/input}" th:object="${donorCompany}" method="post">
+        <label for="input">Indtast antal paller:</label>
+        <input type="text" th:field="*{input}" />
+        <button type="submit">Gem</button>
+    </form>
+
+</div>
+
+
+<!--elementer kun soupkitchen-->
+
+<div th:if="${userType == 'soupKitchen'}">
+    <!--Dropdown menu til suppekøkken-->
+
+    <form class = "needNotNeedSoupkitchen" th:action="@{/SoupKitchen}" th:object="${soupKitchen}" method="post">
+        <label>Angiv behov for mad:</label>
+        <select th:field="*{statusNeednotneed}">
+            <option th:value="true">Mangler mad</option>
+            <option th:value="false">Mangler IKKE mad</option>
+        </select>
+        <button type="submit">Send</button>
+    </form>
+
+</div>
+
+
+
+<!--elementer kun til distributioncompany-->
+
+<div class="wrapperTables" th:if="${userType == 'distributionCompany'}">
+    <!--Tables med butik/antal paller og suppekøkkener/adresse-->
+    <table class="foodForCollectionTable" border="1">
+        <caption>Mad tilgængeligt for afhæntning</caption>
+        <thead>
+        <tr>
+            <th>Butik</th>
+            <th>Paller</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="donorCompany : ${donorCompanys}">
+            <td th:text="${donorCompany.address}">Adresse</td>
+            <td th:text="${donorCompany.palletCount}">Antal</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="placesToDeliverFood" border="1">
+        <caption >Steder maden kan afleveres</caption>
+        <thead>
+        <tr class="single-line">
+            <th>Suppekøkken adresse</th>
+            <th>Behov for mad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="soupKitchen : ${soupKitchens}">
+            <td th:text="${soupKitchen.address}">Adresse</td>
+            <td th:text="${soupKitchen.statusNeedNotNeed}">behov for mad</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</html>
