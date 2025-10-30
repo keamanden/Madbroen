@@ -14,7 +14,7 @@ public class WebController {
 
     @GetMapping("/{page}")
     public String dynamic(@PathVariable String page) {
-        return page;
+        return "pages/" + page;
     }
 
     @GetMapping("/dashboard")
