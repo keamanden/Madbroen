@@ -1,16 +1,27 @@
 .lw { font-size: 60px; }
 
-.wrapperTables{
+
+/*Styling for distributionCompany elementer*/
+
+.wrapperTablesDistribution{
     display: flex;
     gap: 20px;
+    position: absolute;
+    top: 600px;
+    left: 100px;
 
 }
 
 table, th, td{
-
+    text-align: left;
     border: 1px solid;
     border-collapse: collapse;
 
+}
+.containerDistribution{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .single-line{
@@ -31,4 +42,8 @@ td:nth-child(1){
     padding-right: 250px;
     padding-left: 5px;
 
+}
+
+td:nth-child(even){
+    background-color: grey;
 }
