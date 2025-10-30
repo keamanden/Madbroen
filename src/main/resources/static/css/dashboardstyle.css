@@ -7,8 +7,13 @@
     display: flex;
     gap: 20px;
     position: absolute;
-    top: 600px;
-    left: 100px;
+    top: 310px;
+    flex: 1;
+    right: 0px;
+
+}
+.layoutDashboardDistribution{
+    display: flex;
 
 }
 
@@ -46,4 +51,17 @@ td:nth-child(1){
 
 td:nth-child(even){
     background-color: grey;
+}
+
+/*Vertikal linje til opdeling af siden*/
+
+.vertical-line {
+    border-left: 2px solid rgb(4, 4, 4);
+    height: 600px;
+    position: absolute;
+    right: 795px;
+    bottom: 0;
+
+
+
 }

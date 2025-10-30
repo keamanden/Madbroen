@@ -40,8 +40,8 @@
 
 
 <!--elementer kun til distributioncompany-->
-
-<div class="wrapperTablesDistribution containerDistribution" th:if="${userType == 'distributionCompany'}">
+<div class="layoutDashboardDistribution" th:if="${userType == 'distributionCompany'}">
+<div class="wrapperTablesDistribution containerDistribution" >
     <!--Tables med butik/antal paller og suppekøkkener/adresse-->
     <table class="foodForCollectionTable" border="1">
         <caption>Mad tilgængeligt for afhæntning</caption>
@@ -75,6 +75,11 @@
         </tbody>
     </table>
 </div>
+</div>
+<!--vertikal linje-->
+<div class="vertical-line"></div>
 
 
+
+</body>
 </html>
