@@ -114,3 +114,8 @@ td:nth-child(even){
     border: none;
     left: 0px;
 }
+
+body {
+    overflow-x: auto;
+    min-width: 900px;
+}

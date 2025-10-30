@@ -30,8 +30,8 @@ public class WebController {
 
 
     @GetMapping("/hello")
-    public String hello() {
-        return "pages/test";
+    public String page() {
+        return "pages/aboutus";
     }
 
 

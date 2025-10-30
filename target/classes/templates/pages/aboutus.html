@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--
+  DOCTYPE erklæring - Dette fortæller browseren at dette er en HTML5 dokument
+-->
+
+<html lang="da">
+<!--
+  <html> element - Dette er roden af hele HTML dokumentet
+  lang="da" attribut - Fortæller at siden er på dansk
+-->
+
+<head>
+  <!--
+    <head> element - Indeholder metadata og information om siden
+  -->
+
+  <meta charset="UTF-8">
+  <!--
+    UTF-8 tegnkodning - understøtter alle internationale tegn
+  -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Viewport meta - vigtig for responsivt design på mobile enheder
+    width=device-width betyder siden tilpasses skærmbredden
+    initial-scale=1.0 betyder zoom-niveau starter på 100%
+  -->
+
+  <title>Om os - Madbroen</title>
+  <!--
+    Siden titel - vises i browser-fanebladet
+  -->
+
+  <!--
+    <link> element - Dette linker til CSS filen
+    rel="stylesheet" betyder det er et stylesheet
+    href="/css/aboutusstyle.css" betyder CSS filen ligger i /src/main/resources/static/css/ mappen
+
+    I et Spring Boot projekt:
+    - Filer i /src/main/resources/static/ bliver tilgængelige fra root "/"
+    - Så /css/aboutusstyle.css henviser til /src/main/resources/static/css/aboutusstyle.css
+  -->
+  <link rel="stylesheet" href="/css/aboutusstyle.css">
+
+</head>
+
+<body>
+
+<!--
+  <main> element - Dette er hovedindholdet på siden
+  OBS: Header og footer kommer fra en global fil, så de er IKKE her!
+-->
+<main>
+  <!--
+    <div> element med class="content-box"
+    class betyder denne div har en CSS klasse kaldet "content-box"
+    Vi kan style alle elementer med denne klasse i CSS filen
+  -->
+  <div class="content-box">
+    <!--
+      <h1> element - Hovedoverskriften for siden
+      Denne vises STOR og fed med orange linje under (styling kommer fra CSS)
+    -->
+    <h1>Om os</h1>
+
+    <!--
+      <p> element - En paragraf (tekst-afsnit)
+      class="intro-text" betyder denne tekst bruger intro-text styling fra CSS
+      Dette er introduktionen til siden - det første brugeren læser
+    -->
+    <p class="intro-text">
+      Velkommen til Madbroen - vi forbinder supermarkeder, NGO'er og frivillige
+      i en fælles mission mod madspild. Sammen redder vi mad og hjælper mennesker i nød.
+    </p>
+
+    <!--
+      FØRSTE SEKTION - Vores Mission
+      <h2> er en underoverskrift (mindre end h1)
+    -->
+    <h2>Vores Mission</h2>
+
+    <!--
+      Første paragraf i mission - Problemet og løsningen
+      Forklarer hvad Madbroen gør konkret
+      <p> elementer uden class bruger default p-styling fra CSS
+    -->
+    <p>
+      Madbroen forbinder supermarkeder med NGO'er og frivillige for at redde mad
+      der ellers ville blive smidt væk. Hver dag bliver der smidt næsten 2.000 tons
+      fødevarer ud i Danmark - vi gør det nemt at få denne mad ud til mennesker der har brug for det.
+    </p>
+
+    <!--
+      Anden paragraf i mission - Hvordan vi gør det
+      Konkrete eksempler på hvordan systemet fungerer
+    -->
+    <p>
+      Vi er platformen der forbinder alle tre aktører og på kort tid reducerer madspild
+      samtidig med at vi hjælper mennesker i nød. Gennem vores system kan supermarkeder nemt
+      donere overskudsmad, NGO'er modtager notifikationer, og frivillige kan tilmelde sig og køre maden.
+    </p>
+
+    <!--
+      ANDEN SEKTION - Hvordan Vi Hjælper
+      Dette afsnit viser de tre brugergrupper
+    -->
+    <h2>Hvordan Vi Hjælper</h2>
+
+    <!--
+      Introduktion til de tre brugergrupper
+    -->
+    <p>
+      Madbroen tilbyder løsninger til tre forskellige brugergrupper, der alle arbejder sammen:
+    </p>
+
+    <!--
+      <ul> element - Uordnet liste (med punkter - bullets)
+      Hver <li> er ét punkt i listen
+    -->
+    <ul>
+      <!--
+        BRUGERGRUPPE 1: Supermarkeder
+        <li> element - Et listepunkt
+        <strong> betyder fed/bold tekst
+      -->
+      <li>
+        <strong>For Supermarkeder:</strong>
+        Vi giver jer en nemt-at-bruge platform til at notificere NGO'er når I har overskudsmad.
+        I mindsker madspild, skalmoderet risiko og får gode PR-værdier.
+      </li>
+
+      <!--
+        BRUGERGRUPPE 2: NGO'er og suppekøkkener
+      -->
+      <li>
+        <strong>For NGO'er & Suppekøkkener:</strong>
+        Vi forbinder jer direkte med supermarkeder der donerer mad, og mobiliserer frivillige
+        til at køre maden til jer. Således kan I fokusere på jeres kerneopgave - at hjælpe mennesker.
+      </li>
+
+      <!--
+        BRUGERGRUPPE 3: Frivillige
+      -->
+      <li>
+        <strong>For Frivillige:</strong>
+        Vi gør det nemt at se hvor der er behov for hjælp. Sign up, vælg en rute,
+        og vær med til at gøre en forskel - alt på få minutter.
+      </li>
+    </ul>
+
+    <!--
+      TREDJE SEKTION - Hvorfor Det Betyder Noget
+      Vigtige statistikker fremhævet
+    -->
+    <h2>Hvorfor Det Betyder Noget</h2>
+
+    <!--
+      <div> med class="highlight"
+      Dette skaber en lysegul boks som gør vigtig information mere synlig
+      Styling (gul baggrundsfarve, mørkebrun tekst, gult strip på siden) kommer fra CSS
+    -->
+    <div class="highlight">
+      <p>
+        <strong>Vigtige tal:</strong>
+        Madspildet i den danske servicesektor udgør 227.000 tons pr. år.
+        72% af servicesektorens madspild stammer fra detailhandelen - det er 163.000 tons mad
+        der kunne være reddet og gjort gode for. Det er ikke bare miljø-spørgsmål,
+        det handler også om social retfærdighed.
+      </p>
+    </div>
+
+    <!--
+      FJERDE SEKTION - Om Vores Platform
+      Forklarer designfilosofi
+    -->
+    <h2>Om Vores Platform</h2>
+
+    <!--
+      Første paragraf - Hvordan vi tænker på design
+    -->
+    <p>
+      Madbroen er bygget med fokus på brugervenlighed og effektivitet. Hver brugertype
+      - supermarked, NGO og frivillig - har deres eget interface tilpasset deres behov.
+      Vi bruger moderne webteknik og design-principler for at sikre, at alle kan bruge
+      platformen uden besvær, uanset teknisk baggrund.
+    </p>
+
+    <!--
+      Introduktion til Golden Rules
+    -->
+    <p>
+      Vores design følger såkaldte "Golden Rules" for brugergrænseflader:
+    </p>
+
+    <!--
+      Liste over de fire Golden Rules
+      Hver regel forklarer en design-princip
+    -->
+    <ul>
+      <!--
+        GOLDEN RULE 1: Feedback
+      -->
+      <li>
+        <strong>Lav hjemmehørende og god feedback:</strong>
+        Brugeren ved altid hvad der sker - når en donation er registreret,
+        når frivillige er på vej, når maden er ankommet.
+      </li>
+
+      <!--
+        GOLDEN RULE 2: Brugerens sprog
+      -->
+      <li>
+        <strong>Tal brugerens sprog:</strong>
+        Ingen fagudtryk eller forvirrende termer. En supermarked skal kunne donere
+        på 30 sekunder uden support.
+      </li>
+
+      <!--
+        GOLDEN RULE 3: Brugerkontrol
+      -->
+      <li>
+        <strong>Brugerkontrol:</strong>
+        Let at foretage ændringer og annullere handlinger. Hvis planer ændres,
+        kan man nemt informere hinanden.
+      </li>
+
+      <!--
+        GOLDEN RULE 4: Konsistens
+      -->
+      <li>
+        <strong>Konsistens:</strong>
+        Samme design og layout på tværs af alle interfaces, så der er en genkendelig
+        Madbroen-oplevelse uanset hvor man logger ind.
+      </li>
+    </ul>
+
+    <!--
+      FEMTE SEKTION - Vores Vision
+      Konklusion og inspirational message
+    -->
+    <h2>Vores Vision</h2>
+
+    <!--
+      Første paragraf - Den store drøm
+    -->
+    <p>
+      Vi drømmer om en Danmark hvor madspild ikke eksisterer - hvor hver skefuld mad
+      der kunne være reddet, faktisk bliver reddet og når mennesker der har brug for det.
+    </p>
+
+    <!--
+      Anden paragraf - Hvordan vi gør det muligt
+    -->
+    <p>
+      Madbroen er mere end en app - vi er økosystemet der gør det muligt. Ved at gøre det
+      lav-threshold for supermarkeder at donere, nemt for NGO'er at modtage, og tilfredsstillende
+      for frivillige at hjælpe, tror vi at vi kan transformere industrien.
+    </p>
+
+    <!--
+      Tredje paragraf - Opfordring til handling
+    -->
+    <p>
+      Hver dag vi opererer, redder vi tusinder af måltider. Men vi kan gøre det endnu bedre
+      sammen med dig. Enten som frivillig, NGO-partner, eller supermarked - du kan være en del
+      af løsningen.
+    </p>
+
+    <!--
+      Call-to-action knap
+      <button> element - Et klikbart felt
+      class="cta-button" betyder knappen bruger cta-button styling fra CSS
+      Teksten "Kom i gang nu →" vises på knappen
+    -->
+    <button class="cta-button">
+      Kom i gang nu →
+    </button>
+  </div>
+</main>
+
+<!--
+  OBS: Footer er IKKE her fordi det kommer fra en global fil!
+-->
+
+</body>
+</html>
