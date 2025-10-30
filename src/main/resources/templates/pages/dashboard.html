@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="dasboardstyle" th:href="@{/css/dashboardstyle.css}"/>
+    <link rel="stylesheet" th:href="@{/css/dashboardstyle.css}"/>
 </head>
 <body>
 
@@ -12,9 +12,9 @@
 <div class="donorCompanyPallets" th:if="${userType == 'donorCompany'}">
     <!--Virksomhedder kan inputte antal paller-->
 
-    <form th:action="@{/input}" th:object="${donorCompany}" method="post">
-        <label for="input">Indtast antal paller:</label>
-        <input type="text" th:field="*{input}" />
+    <form th:action="@{/palletCount}" th:object="${user}" method="post">
+        <label for="palletCount">Indtast antal paller:</label>
+        <input type="text" th:field="*{palletCount}" id="palletCount" />
         <button type="submit">Gem</button>
     </form>
 
@@ -28,7 +28,7 @@
 
     <form class = "needNotNeedSoupkitchen" th:action="@{/SoupKitchen}" th:object="${soupKitchen}" method="post">
         <label>Angiv behov for mad:</label>
-        <select th:field="*{statusNeednotneed}">
+<!--        <select th:field="*{statusNeednotneed}">-->
             <option th:value="true">Mangler mad</option>
             <option th:value="false">Mangler IKKE mad</option>
         </select>
@@ -83,7 +83,7 @@
 
 <div>
 
-    <form th:action="@{/form}" th:object="${User}" method="post" class="form-column">
+    <form th:action="@{/form}" th:object="${user}" method="post" class="form-column">
 
         <label>Navn:</label>
         <input type="text" th:field="*{name}" />
