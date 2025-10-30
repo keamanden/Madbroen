@@ -1,0 +1,107 @@
+/* background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #ffffff);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* signup background */
+.signup-container {
+    background-color: #BE5523;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    max-width: 900px;
+    width: 100%;
+}
+
+/* title */
+h1 {
+    font-size: 28px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+/* description */
+p {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* signup */
+.signup-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* left column */
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* template labels */
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #000000;
+}
+
+/* input */
+input,
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: #3b3b5e;
+    color: white;
+    font-size: 14px;
+}
+
+/* placeholder */
+input::placeholder {
+    color: #c7c7d6;
+}
+
+/* dropdown menu select */
+select {
+    background-color: #3b3b5e;
+}
+
+/* select description */
+small {
+    font-size: 12px;
+    color: #c7c7d6;
+    margin-bottom: 15px;
+}
+
+/* button */
+button {
+    margin-top: 25px;
+    align-self: flex-end;
+    width: 120px;
+    padding: 10px;
+    background-color: #27AE60;
+    color: #1e1e2f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* button hover */
+button:hover {
+    background-color: #e0b820;
+}
