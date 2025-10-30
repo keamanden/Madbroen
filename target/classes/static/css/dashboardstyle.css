@@ -58,7 +58,7 @@ td:nth-child(even){
 .vertical-line {
     border-left: 2px solid rgb(4, 4, 4);
     height: 600px;
-    position: absolute;
+    position: fixed;
     right: 795px;
     bottom: 0;
 
@@ -101,4 +101,16 @@ td:nth-child(even){
     position: fixed;
     right: 200px;
     bottom: 500px;
+}
+
+/* styling af horizontal linje */
+.horizontal-line{
+    height: 2px;
+    background-color: black;
+    width: 100vw;
+    margin: 0px;
+    bottom: 599px;
+    position: fixed;
+    border: none;
+    left: 0px;
 }

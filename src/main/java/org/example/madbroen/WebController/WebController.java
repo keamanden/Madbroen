@@ -22,10 +22,13 @@ public class WebController {
     public String showTestPage(Model model) {
         model.addAttribute("user", new TestUser("Acme A/S", "Main Street 1", "info@acme.dk",
                 12345678, 87654321, "John Doe",
-                "donorCompany", 42, true, "Some input"));
-        model.addAttribute("userType", "donorCompany");
+                "soupKitchen", 42, true, "Some input"));
+
         return "pages/dashboard";
     }
+
+
+
     @GetMapping("/hello")
     public String hello() {
         return "pages/test";
