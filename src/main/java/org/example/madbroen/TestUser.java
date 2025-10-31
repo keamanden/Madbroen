@@ -59,6 +59,22 @@ public class TestUser {
         return userType;
     }
 
+    @Override
+    public String toString() {
+        return "TestUser{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", CVR=" + CVR +
+                ", mainContactName='" + mainContactName + '\'' +
+                ", userType='" + userType + '\'' +
+                ", palletCount=" + palletCount +
+                ", statusNeedNotNeed=" + statusNeedNotNeed +
+                ", input='" + input + '\'' +
+                '}';
+    }
+
     public int getPalletCount() {
         return palletCount;
     }
@@ -101,6 +117,8 @@ public class TestUser {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.CVR = CVR;
+        this.palletCount = palletCount;
+        this.statusNeedNotNeed = statusNeedNotNeed;
         this.mainContactName = mainContactName;
         this.userType = userType;
 
