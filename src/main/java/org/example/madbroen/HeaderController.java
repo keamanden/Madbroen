@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
     @Controller
     public class HeaderController {
-        @GetMapping("/header")
+        @GetMapping("fragments/header")
         public String header() {
-            return "header";
+            return "fragments/header";
         }
     }
 
