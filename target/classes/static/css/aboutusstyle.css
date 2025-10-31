@@ -23,9 +23,7 @@
   padding: 0 fjerner default polstring inden i alle elementer
   box-sizing: border-box betyder at border og padding måles indenfor width/height
 */
-* {
-    margin: 0;
-    padding: 0;
+.page-about * {
     box-sizing: border-box;
 }
 
@@ -52,7 +50,7 @@
     - Betyder tekstfarven er mørkegrå (næsten sort)
     - #333 = RGB(51, 51, 51)
 */
-body {
+.page-about body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -78,7 +76,7 @@ body {
     - 0px over/under, 20px til venstre/højre
     - Vigtig for mobile enheder der ikke skal gå helt til kanten
 */
-main {
+.page-about main {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
@@ -112,7 +110,7 @@ main {
     - 8px betyder hvor stor skyggen er
     - rgba(0, 0, 0, 0.1) betyder sort med 10% gennemsigtighed
 */
-.content-box {
+.page-about .content-box {
     background-color: white;
     padding: 40px;
     border: 1px solid #ddd;
@@ -143,7 +141,7 @@ main {
   padding-bottom: 15px
     - 15px luft mellem tekst og linje
 */
-h1 {
+.page-about h1 {
     font-size: 32px;
     color: #333;
     margin-bottom: 20px;
@@ -167,7 +165,7 @@ h1 {
   margin-bottom: 15px
     - 15px luft efter overskriften
 */
-h2 {
+.page-about h2 {
     font-size: 24px;
     color: #333;
     margin-top: 30px;
@@ -189,7 +187,7 @@ h2 {
     - Teksten justeres på begge sider
     - Giver et mere formelt udseende
 */
-p {
+.page-about p {
     margin-bottom: 15px;
     text-align: justify;
 }
@@ -212,7 +210,7 @@ p {
     - 30px luft under (mere end normal)
     - Skaber extra afstand før næste sektion
 */
-.intro-text {
+.page-about .intro-text {
     font-size: 18px;
     color: #666;
     font-style: italic;
@@ -233,7 +231,7 @@ p {
   margin-bottom: 20px
     - 20px luft under listen
 */
-ul {
+.page-about ul {
     margin-left: 30px;
     margin-bottom: 20px;
 }
@@ -245,7 +243,7 @@ ul {
     - 10px luft mellem hvert punkt
     - Gør listen lettere at læse
 */
-li {
+.page-about li {
     margin-bottom: 10px;
 }
 
@@ -259,7 +257,7 @@ li {
   Denne klasse kan bruges til at style denne specifikke liste anderledes
   hvis vi ønsker det (fx med ikoner senere)
 */
-.user-groups {
+.page-about .user-groups {
     /* Bruger standard ul styling fra ovenfor */
 }
 
@@ -269,7 +267,7 @@ li {
   Denne klasse kan bruges til at style denne specifikke liste anderledes
   hvis vi ønsker det
 */
-.golden-rules {
+.page-about .golden-rules {
     /* Bruger standard ul styling fra ovenfor */
 }
 
@@ -303,7 +301,7 @@ li {
     - 20px luft over og under
     - 0 luft til venstre og højre
 */
-.highlight {
+.page-about .highlight {
     background-color: #fff3cd;
     color: #856404;
     padding: 15px;
@@ -328,7 +326,7 @@ li {
     - Mørkegrå tekstfarve
 
   padding: 15px 30px
-    - 15px top/bottom, 30px left/right
+    - 15px top/bund, 30px venstre/højre
     - Gør knappen stor nok til at kunne klikkes let
 
   border: 1px solid #ddd
@@ -351,7 +349,7 @@ li {
   margin-top: 30px
     - 30px luft over knappen
 */
-.cta-button {
+.page-about .cta-button {
     background-color: #90EE90;
     color: #333;
     padding: 15px 30px;
@@ -371,7 +369,7 @@ li {
     - Mørkere grøn farve
     - Signal til brugeren om at knappen er interaktiv
 */
-.cta-button:hover {
+.page-about .cta-button:hover {
     background-color: #7CCD7C;
 }
 
@@ -391,7 +389,7 @@ li {
       main styling på mobile enheder
       padding: 0 10px betyder mindre luft til siderne på små skærme
     */
-    main {
+    .page-about main {
         padding: 0 10px;
     }
 
@@ -399,7 +397,7 @@ li {
       .content-box styling på mobile enheder
       padding: 20px betyder mindre luft indenfor boksen
     */
-    .content-box {
+    .page-about .content-box {
         padding: 20px;
     }
 
@@ -407,7 +405,7 @@ li {
       h1 styling på mobile enheder
       font-size: 24px betyder mindre overskrift (var 32px før)
     */
-    h1 {
+    .page-about h1 {
         font-size: 24px;
     }
 
@@ -415,7 +413,7 @@ li {
       h2 styling på mobile enheder
       font-size: 20px betyder mindre underoverskrift (var 24px før)
     */
-    h2 {
+    .page-about h2 {
         font-size: 20px;
     }
 
@@ -423,7 +421,7 @@ li {
       .intro-text styling på mobile enheder
       font-size: 16px betyder mindre tekst (var 18px før)
     */
-    .intro-text {
+    .page-about .intro-text {
         font-size: 16px;
     }
 }
@@ -442,7 +440,7 @@ li {
       width: 100% betyder knappen fylder hele bredden
       padding: 12px 20px betyder mindre polstring
     */
-    .cta-button {
+    .page-about .cta-button {
         width: 100%;
         padding: 12px 20px;
     }
@@ -451,7 +449,8 @@ li {
       ul styling på små mobiler
       margin-left: 20px betyder mindre indrykning (var 30px før)
     */
-    ul {
+    .page-about ul {
         margin-left: 20px;
     }
+}
 }

@@ -1,6 +1,17 @@
-/* background */
-body {
+/* ======== Contact Page Scoped ======== */
+.page-contact body,
+.page-contact h1,
+.page-contact p,
+.page-contact input,
+.page-contact textarea,
+.page-contact label,
+.page-contact button {
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
+}
+
+/* background */
+.page-contact body {
     background: linear-gradient(135deg, #000000, #ffffff);
     color: #fff;
     display: flex;
@@ -11,7 +22,7 @@ body {
 }
 
 /* contact box background */
-.contact-container {
+.page-contact .contact-container {
     background-color: #BE5523;
     width: min(900px, 92vw);
     padding: 36px 44px;
@@ -20,21 +31,21 @@ body {
 }
 
 /* title */
-h1 {
+.page-contact h1 {
     margin: 0 0 10px;
     font-size: 28px;
     color: #000000;
 }
 
 /* text */
-p {
+.page-contact p {
     margin: 8px 0 14px;
     color: #ffffff;
     line-height: 1.4;
 }
 
 /* form design */
-.contact-form {
+.page-contact .contact-form {
     display: grid;
     grid-template-columns: 1fr;
     gap: 18px 28px;
@@ -42,21 +53,21 @@ p {
 }
 
 /* text field */
-.field-group {
+.page-contact .field-group {
     display: flex;
     flex-direction: column;
 }
 
 /* input labels */
-label {
+.page-contact label {
     font-weight: bold;
     margin-bottom: 6px;
     color: #ffffff;
 }
 
 /* input */
-input[type="email"],
-textarea {
+.page-contact input[type="email"],
+.page-contact textarea {
     background-color: #3b3b5e;
     color: #ffffff;
     border: none;
@@ -67,38 +78,23 @@ textarea {
 }
 
 /* placeholder */
-input::placeholder,
-textarea::placeholder {
+.page-contact input::placeholder,
+.page-contact textarea::placeholder {
     color: #c7c7d6;
 }
 
 /* focus state */
-input[type="email"]:focus,
-textarea:focus {
+.page-contact input[type="email"]:focus,
+.page-contact textarea:focus {
     box-shadow: 0 0 0 2px #f4c43055;
 }
 
-/* text size */
-textarea {
+/* text area */
+.page-contact textarea {
     min-height: 180px;
     resize: vertical;
 }
 
 /* button */
-button[type="submit"] {
-    justify-self: end;
-    margin-top: 6px;
-    padding: 12px 20px;
-    background-color: #27AE60;
-    color: #000000;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.25s, transform 0.05s;
-}
+.page-contac
 
-/* hover over button */
-button[type="submit"]:hover {
-    background-color: #e0b820;
-}

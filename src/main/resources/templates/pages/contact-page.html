@@ -13,6 +13,7 @@
 
 <body>
 <div th:replace="~{fragments/header :: siteHeader}"></div>
+<div class="page-contact">
 <main class="contact-container">
     <h1>Kontakt os</h1>
 
@@ -31,6 +32,7 @@
         <div class="field-group">
             <label for="message">Hvad handler henvendelsen sig om?</label>
             <textarea id="message" name="message" rows="8" placeholder="Fx: spørgsmål, feedback eller forespørgsel" required></textarea>
+        </div>
         </div>
 
         <button type="submit">Send</button>

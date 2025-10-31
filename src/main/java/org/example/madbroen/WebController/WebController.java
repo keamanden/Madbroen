@@ -17,9 +17,9 @@ public class WebController {
         return "pages/" + page;
     }
 
-    @GetMapping("/dashboard")
+    @GetMapping("/index")
     public String index() {
-        return "pages/dashboard";
+        return "pages/index";
     }
 
     //get mapping for login
