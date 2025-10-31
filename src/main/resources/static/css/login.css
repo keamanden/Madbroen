@@ -54,6 +54,12 @@ input::placeholder {
     color: #c7c7d6;
 }
 
+/* focus state */
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 0 2px #f4c43055;
+}
+
 /* button */
 button {
     width: 100%;
