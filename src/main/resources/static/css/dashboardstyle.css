@@ -6,10 +6,9 @@
 .wrapperTablesDistribution{
     display: flex;
     gap: 20px;
-    position: absolute;
-    top: 310px;
-    flex: 1;
-    right: 0px;
+    position: fixed;
+    top: 380px;
+    right: 300px;
 
 }
 .layoutDashboardDistribution{
@@ -21,6 +20,7 @@ table, th, td{
     text-align: left;
     border: 1px solid;
     border-collapse: collapse;
+    padding: 0;
 
 }
 .containerDistribution{
@@ -40,12 +40,12 @@ table, th, td{
 td:nth-child(2){
     padding-right: 5px;
     padding-left: 5px;
-    padding-top: -10px;
-}
 
+}
+th:nth-child(1),
 td:nth-child(1){
     padding-right: 250px;
-    padding-left: 5px;
+    padding-left: 25px;
 
 }
 
@@ -59,7 +59,7 @@ td:nth-child(even){
     border-left: 2px solid rgb(4, 4, 4);
     height: 600px;
     position: absolute;
-    right: 795px;
+    left: 30%;
     bottom: 0;
 
 
