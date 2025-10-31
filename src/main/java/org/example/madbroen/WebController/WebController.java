@@ -2,11 +2,8 @@ package org.example.madbroen.WebController;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import org.example.madbroen.TestUser;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +20,64 @@ public class WebController {
     @GetMapping("/dashboard")
     public String index() {
         return "pages/dashboard";
+    }
+
+    //get mapping for login
+    @GetMapping("/login")
+    public String showLogin() {
+        return "pages/login";
+    }
+
+    //post mapping for login
+    @PostMapping("/login")
+    public String fakeLogin(
+            @RequestParam String email,
+            @RequestParam String password) {
+        // no real auth yet — just redirects somewhere else
+        return "redirect:/contact-page"; //TODO: change to frontpage later
+    }
+
+    //get mapping for signup
+    @GetMapping("/signup")
+    public String showSignupPage() {
+        return "pages/signup";
+    }
+
+    //post mapping for signup
+    @PostMapping("/signup")
+    public String processSignup(
+            @RequestParam String companyName,
+            @RequestParam String contactName,
+            @RequestParam String phone,
+            @RequestParam String cvr,
+            @RequestParam String address,
+            @RequestParam String email,
+            @RequestParam String companyType,
+            @RequestParam String password,
+            @RequestParam String confirmPassword
+    ) {
+        // no method to save data — just redirects somewhere else
+        return "redirect:/contact-page"; //TODO: change to frontpage later
+    }
+
+    //get mapping for contact page
+    @GetMapping("/contact-page")
+    public String showContactPage() {
+        return "pages/contact-page";
+    }
+
+    //post mapping for contact page
+    @PostMapping("/contact")
+    public String processContactForm(
+            @RequestParam String email,
+            @RequestParam String message
+    ) {
+        // print statements for testing/debug
+        System.out.println("Kontakt fra: " + email);
+        System.out.println("Besked: " + message);
+
+        // just redirects somewhere else
+        return "redirect:/contact-page"; //TODO: maybe make a "thank you" page?
     }
 
     @GetMapping("/test")
