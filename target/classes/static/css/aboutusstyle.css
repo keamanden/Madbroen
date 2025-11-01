@@ -1,5 +1,5 @@
 /* ============================================================= */
-/* MADBROEN - ABOUT US PAGE STYLESHEET */
+/* MADBROEN - ABOUT US PAGE STYLESHEET - FULL PAGE LAYOUT */
 /* ============================================================= */
 
 /*
@@ -30,11 +30,25 @@
 }
 
 /* ============================================================= */
-/* BODY STYLING - Baggrundsfarve og standard skrift */
+/* HTML OG BODY STYLING - Fyld hele viewport */
 /* ============================================================= */
 
 /*
+  html element styling
+  height: 100vh betyder html fyldt hele viewport højde (100% af visible window)
+  width: 100% betyder det fyldt hele bredden
+*/
+html {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*
   body element styling - Dette påvirker hele siden
+
+  height: 100vh betyder body fyldt hele synlige område (viewport)
+  width: 100% betyder det fyldt hele bredden
 
   background-color: #f5f5f5
     - Giver siden en lys grå baggrundsfarve
@@ -51,37 +65,54 @@
   color: #333
     - Betyder tekstfarven er mørkegrå (næsten sort)
     - #333 = RGB(51, 51, 51)
+
+  display: flex betyder body bruger flexbox layout
+  flex-direction: column betyder elementer er arrangeret lodret (ovenpå hinanden)
+
+  overflow: hidden betyder hvis noget er for stort, bliver det ikke vist (ingen scrollbar på body)
 */
 body {
+    height: 100vh;
+    width: 100%;
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 /* ============================================================= */
-/* MAIN ELEMENT STYLING - Hovedindholdet */
+/* MAIN ELEMENT STYLING - Voksende hovedindhold */
 /* ============================================================= */
 
 /*
   main element styling - Container for alt indholdet
 
-  max-width: 1000px
-    - Maksimal bredde på indholdet er 1000 pixels
-    - Gør siden lettere at læse på store skærme
+  flex: 1 betyder main vokser og fylder al ledigt plads
+  Dette sikrer at main fylder hele området mellem header og footer
 
-  margin: 40px auto
-    - 40px luft over og under
-    - auto betyder det er centreret horisontalt
+  width: 100% betyder main fyldt hele bredden af viewport
 
-  padding: 0 20px
-    - 0px over/under, 20px til venstre/højre
-    - Vigtig for mobile enheder der ikke skal gå helt til kanten
+  overflow-y: auto betyder hvis indholdet er for langt, bliver der scrollbar INDEN I main
+  (ikke på hele siden)
+
+  display: flex betyder main bruger flexbox layout
+  justify-content: center betyder indholdet er centreret horisontalt
+  align-items: flex-start betyder indholdet starter fra toppen
+
+  padding: 40px 20px betyder 40px top/bottom, 20px left/right
+  Vigtig luft rundt omkring indholdet
 */
 main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
 }
 
 /* ============================================================= */
@@ -111,6 +142,11 @@ main {
     - 0 2px betyder skyggen er 2px ned
     - 8px betyder hvor stor skyggen er
     - rgba(0, 0, 0, 0.1) betyder sort med 10% gennemsigtighed
+
+  width: 100% betyder boksen fyldt hele main bredden
+  max-width: 1000px betyder boksen max bliver 1000px bred
+
+  margin: 0 auto betyder boksen er centreret
 */
 .content-box {
     background-color: white;
@@ -118,6 +154,9 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* ============================================================= */
@@ -244,33 +283,12 @@ ul {
   margin-bottom: 10px
     - 10px luft mellem hvert punkt
     - Gør listen lettere at læse
+
+  line-height: 1.8 betyder ekstra line-height for list items
 */
 li {
     margin-bottom: 10px;
-}
-
-/* ============================================================= */
-/* SPECIAL LIST STYLING - user-groups og golden-rules */
-/* ============================================================= */
-
-/*
-  .user-groups class styling - Listen over de tre brugergrupper
-
-  Denne klasse kan bruges til at style denne specifikke liste anderledes
-  hvis vi ønsker det (fx med ikoner senere)
-*/
-.user-groups {
-    /* Bruger standard ul styling fra ovenfor */
-}
-
-/*
-  .golden-rules class styling - Listen over de fire Golden Rules
-
-  Denne klasse kan bruges til at style denne specifikke liste anderledes
-  hvis vi ønsker det
-*/
-.golden-rules {
-    /* Bruger standard ul styling fra ovenfor */
+    line-height: 1.8;
 }
 
 /* ============================================================= */
@@ -350,6 +368,8 @@ li {
 
   margin-top: 30px
     - 30px luft over knappen
+
+  display: inline-block betyder knappen er på linje (ikke hele bredden)
 */
 .cta-button {
     background-color: #90EE90;
@@ -361,6 +381,7 @@ li {
     font-size: 16px;
     transition: background-color 0.3s;
     margin-top: 30px;
+    display: inline-block;
 }
 
 /*
@@ -389,10 +410,10 @@ li {
 @media (max-width: 768px) {
     /*
       main styling på mobile enheder
-      padding: 0 10px betyder mindre luft til siderne på små skærme
+      padding: 20px 10px betyder mindre luft til siderne på små skærme
     */
     main {
-        padding: 0 10px;
+        padding: 20px 10px;
     }
 
     /*
@@ -438,6 +459,14 @@ li {
 */
 @media (max-width: 480px) {
     /*
+      .content-box styling på små mobiler
+      padding: 15px betyder mindre padding
+    */
+    .content-box {
+        padding: 15px;
+    }
+
+    /*
       .cta-button styling på små mobiler
       width: 100% betyder knappen fylder hele bredden
       padding: 12px 20px betyder mindre polstring
@@ -453,5 +482,13 @@ li {
     */
     ul {
         margin-left: 20px;
+    }
+
+    /*
+      p styling på små mobiler
+      font-size: 14px betyder mindre tekst
+    */
+    p {
+        font-size: 14px;
     }
 }
