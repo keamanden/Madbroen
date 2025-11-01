@@ -80,3 +80,10 @@ body {
         width: 100%;
     }
 }
+
+body {
+    background: url('/img/baggrund.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
