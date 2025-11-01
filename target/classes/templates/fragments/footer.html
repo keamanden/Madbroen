@@ -1,0 +1,68 @@
+<footer th:fragment="siteFooter" class="site-footer">
+    <div class="container-fluid">
+        <div class="row footer-top">
+
+            <!-- Kolonne 1: Om Madbroen -->
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">Om Madbroen</h5>
+                <p class="footer-description">
+                    Vi forbinder supermarkeder, NGO'er og frivillige for at bekæmpe madspild og hjælpe mennesker i nød.
+                </p>
+                <div class="footer-social">
+                    <a href="https://facebook.com/madbroen" target="_blank" class="social-icon">f</a>
+                    <a href="https://instagram.com/madbroen" target="_blank" class="social-icon">📷</a>
+                    <a href="https://linkedin.com/company/madbroen" target="_blank" class="social-icon">in</a>
+                </div>
+            </div>
+
+            <!-- Kolonne 2: Navigation -->
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">Navigation</h5>
+                <ul class="footer-links">
+                    <li><a th:href="@{/}">Hjem</a></li>
+                    <li><a th:href="@{/aboutus}">Om os</a></li>
+                    <li><a th:href="@{/contact-page.html}">Kontakt</a></li>
+                    <li><a th:href="@{/dashboard.html}">Dashboard</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolonne 3: For Brugere -->
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">For Brugere</h5>
+                <ul class="footer-links">
+                    <li><a th:href="@{/login.html}">Log ind</a></li>
+                    <li><a th:href="@{/signup.html}">Opret konto</a></li>
+                    <li><a th:href="@{/privacy}">Privatlivspolitik</a></li>
+                    <li><a th:href="@{/terms}">Vilkår</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolonne 4: Kontakt -->
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">Kontakt</h5>
+                <div class="footer-contact">
+                    <p><strong>Email:</strong></p>
+                    <a href="mailto:info@madbroen.dk">info@madbroen.dk</a>
+
+                    <p style="margin-top: 12px;"><strong>Telefon:</strong></p>
+                    <a href="tel:+4540000000">+45 4000 0000</a>
+
+                    <p style="margin-top: 12px;"><strong>Adresse:</strong></p>
+                    <span>Madbroen, København, Danmark</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2025 Madbroen. Alle rettigheder forbeholdt.</p>
+            <div class="footer-bottom-links">
+                <a th:href="@{/privacy}">Privatlivspolitik</a>
+                <span class="separator">|</span>
+                <a th:href="@{/terms}">Vilkår</a>
+                <span class="separator">|</span>
+                <a th:href="@{/contact-page.html}">Kontakt</a>
+            </div>
+        </div>
+    </div>
+</footer>
