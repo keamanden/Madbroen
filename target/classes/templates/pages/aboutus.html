@@ -286,9 +286,11 @@
         </div>
     </main>
 </div>
-<!--
-  OBS: Footer er IKKE her fordi det kommer fra en global fil!
--->
+
+<div th:replace="~{fragments/footer :: siteFooter}"></div>
+<footer class="site-footer" style="background-color: #1a1a1a; color: white; padding: 20px; text-align: center;">
+  <p>FOOTER TEST - hvis du ser dette, virker footeren!</p>
+</footer>
 
 </body>
 </html>
