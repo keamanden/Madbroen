@@ -1,435 +1,68 @@
-<!--
-  Footer Fragment for Madbroen
-
-  Dette er et Thymeleaf fragment som kan genbruges på alle sider
-  Brug det med: <div th:replace="~{fragments/footer :: footer}"></div>
-
-  Fragment definition: th:fragment="footer" betyder denne del kan genbruges
--->
-
-<footer th:fragment="footer" class="footer">
-    <!--
-      Footer container - holder al footer indhold
-      class="footer-content" bruges til styling
-    -->
-    <div class="footer-content">
-
-        <!-- Footer Top Section -->
-        <div class="footer-top">
+<footer th:fragment="siteFooter" class="site-footer">
+    <div class="container-fluid">
+        <div class="row footer-top">
 
             <!-- Kolonne 1: Om Madbroen -->
-            <div class="footer-column">
-                <!--
-                  Footers logo/navn
-                  Dette skal være samme som header logo for konsistens
-                -->
-                <h3 class="footer-title">🍎 Madbroen</h3>
-
-                <!--
-                  Kort beskrivelse af organisationen
-                  max 2-3 linier
-                -->
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">Om Madbroen</h5>
                 <p class="footer-description">
-                    Vi forbinder supermarkeder, NGO'er og frivillige for at bekæmpe madspild
-                    og hjælpe mennesker i nød.
+                    Vi forbinder supermarkeder, NGO'er og frivillige for at bekæmpe madspild og hjælpe mennesker i nød.
                 </p>
-
-                <!-- Social Media Links -->
                 <div class="footer-social">
-                    <a href="https://facebook.com/madbroen" target="_blank" rel="noopener" class="social-link">
-                        f
-                    </a>
-                    <a href="https://instagram.com/madbroen" target="_blank" rel="noopener" class="social-link">
-                        📷
-                    </a>
-                    <a href="https://linkedin.com/company/madbroen" target="_blank" rel="noopener" class="social-link">
-                        in
-                    </a>
+                    <a href="https://facebook.com/madbroen" target="_blank" class="social-icon">f</a>
+                    <a href="https://instagram.com/madbroen" target="_blank" class="social-icon">📷</a>
+                    <a href="https://linkedin.com/company/madbroen" target="_blank" class="social-icon">in</a>
                 </div>
             </div>
 
-            <!-- Kolonne 2: Links -->
-            <div class="footer-column">
-                <h4 class="footer-subtitle">Navigation</h4>
+            <!-- Kolonne 2: Navigation -->
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">Navigation</h5>
                 <ul class="footer-links">
-                    <li><a href="/">Hjem</a></li>
-                    <li><a href="/om-os">Om os</a></li>
-                    <li><a href="/kontakt">Kontakt</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a th:href="@{/}">Hjem</a></li>
+                    <li><a th:href="@{/aboutus}">Om os</a></li>
+                    <li><a th:href="@{/contact-page.html}">Kontakt</a></li>
+                    <li><a th:href="@{/dashboard.html}">Dashboard</a></li>
                 </ul>
             </div>
 
             <!-- Kolonne 3: For Brugere -->
-            <div class="footer-column">
-                <h4 class="footer-subtitle">For Brugere</h4>
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">For Brugere</h5>
                 <ul class="footer-links">
-                    <li><a href="/login">Log ind</a></li>
-                    <li><a href="/signup">Opret konto</a></li>
-                    <li><a href="/privatlivspolitik">Privatlivspolitik</a></li>
-                    <li><a href="/vilkaar">Vilkår</a></li>
+                    <li><a th:href="@{/login.html}">Log ind</a></li>
+                    <li><a th:href="@{/signup.html}">Opret konto</a></li>
+                    <li><a th:href="@{/privacy}">Privatlivspolitik</a></li>
+                    <li><a th:href="@{/terms}">Vilkår</a></li>
                 </ul>
             </div>
 
-            <!-- Kolonne 4: Kontakt Info -->
-            <div class="footer-column">
-                <h4 class="footer-subtitle">Kontakt</h4>
+            <!-- Kolonne 4: Kontakt -->
+            <div class="col-lg-3 col-md-6 col-sm-12 footer-section">
+                <h5 class="footer-title">Kontakt</h5>
                 <div class="footer-contact">
-                    <p>
-                        <strong>Email:</strong><br>
-                        <a href="mailto:info@madbroen.dk">info@madbroen.dk</a>
-                    </p>
-                    <p>
-                        <strong>Telefon:</strong><br>
-                        <a href="tel:+4540000000">+45 4000 0000</a>
-                    </p>
-                    <p>
-                        <strong>Adresse:</strong><br>
-                        Madbroen, København, Danmark
-                    </p>
+                    <p><strong>Email:</strong></p>
+                    <a href="mailto:info@madbroen.dk">info@madbroen.dk</a>
+
+                    <p style="margin-top: 12px;"><strong>Telefon:</strong></p>
+                    <a href="tel:+4540000000">+45 4000 0000</a>
+
+                    <p style="margin-top: 12px;"><strong>Adresse:</strong></p>
+                    <span>Madbroen, København, Danmark</span>
                 </div>
             </div>
 
         </div>
 
-        <!-- Footer Bottom Section - Copyright -->
         <div class="footer-bottom">
-            <div class="footer-bottom-content">
-
-                <!-- Copyright Text -->
-                <p class="footer-copyright">
-                    &copy; 2025 Madbroen. Alle rettigheder forbeholdt.
-                </p>
-
-                <!-- Bottom Links -->
-                <div class="footer-bottom-links">
-                    <a href="/privatlivspolitik">Privatlivspolitik</a>
-                    <span class="separator">|</span>
-                    <a href="/vilkaar">Vilkår og betingelser</a>
-                    <span class="separator">|</span>
-                    <a href="/kontakt">Kontakt os</a>
-                </div>
-
+            <p class="footer-copyright">&copy; 2025 Madbroen. Alle rettigheder forbeholdt.</p>
+            <div class="footer-bottom-links">
+                <a th:href="@{/privacy}">Privatlivspolitik</a>
+                <span class="separator">|</span>
+                <a th:href="@{/terms}">Vilkår</a>
+                <span class="separator">|</span>
+                <a th:href="@{/contact-page.html}">Kontakt</a>
             </div>
         </div>
-
     </div>
 </footer>
-
-<!--
-  STYLING FOR FOOTER
-  Denne CSS skal være i din global CSS fil eller en separat footer.css
--->
-<style>
-    /* ============================================================= */
-    /* FOOTER STYLING */
-    /* ============================================================= */
-
-    /*
-      footer element styling
-      background-color: #222 betyder meget mørkegrå næsten sort
-      color: #ddd betyder lysegrå tekst
-      margin-top: auto sikrer footer stays at bottom
-      width: 100% betyder footer fyldt hele bredden
-    */
-    footer.footer {
-        background-color: #222;
-        color: #ddd;
-        margin-top: auto;
-        width: 100%;
-        padding: 40px 0 20px 0;
-        border-top: 1px solid #333;
-    }
-
-    /*
-      .footer-content wrapper
-      max-width: 1200px betyder footer content max bliver 1200px
-      margin: 0 auto betyder det er centreret
-      padding: 0 20px betyder 20px luft til siderne
-    */
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    /*
-      .footer-top styling - Øverste del af footer (4 kolonner)
-      display: grid betyder elementerne ordnes i grid
-      grid-template-columns: repeat(4, 1fr) betyder 4 lige store kolonner
-      gap: 30px betyder 30px afstand mellem kolonner
-    */
-    .footer-top {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        margin-bottom: 30px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid #333;
-    }
-
-    /*
-      .footer-column styling - Hver kolonne i footer
-      Giver spacing og styling til hver sektion
-    */
-    .footer-column {
-        display: flex;
-        flex-direction: column;
-    }
-
-    /*
-      .footer-title styling - Kolonne overskrifter (som "Om Madbroen")
-      font-size: 18px betyder større tekst
-      font-weight: bold betyder fed tekst
-      margin-bottom: 15px betyder afstand efter overskrift
-      color: #fff betyder hvid tekst
-    */
-    .footer-title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #fff;
-    }
-
-    /*
-      .footer-subtitle styling - Underoverskrifter i footer
-      font-size: 14px betyder mindre tekst
-      font-weight: bold betyder fed
-      margin-bottom: 12px betyder afstand efter
-      color: #e67e22 betyder orange - samme farve som logo
-    */
-    .footer-subtitle {
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 12px;
-        color: #e67e22;
-    }
-
-    /*
-      .footer-description styling - Beskrivelsestekst
-      font-size: 14px betyder mindre tekst
-      line-height: 1.6 betyder god mellemrum mellem linjer
-      margin-bottom: 15px betyder afstand efter
-      color: #aaa betyder lysegrå tekst
-    */
-    .footer-description {
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 15px;
-        color: #aaa;
-    }
-
-    /*
-      .footer-links styling - Lister med links
-      list-style: none fjerner bullet points
-      padding: 0 fjerner default indrykning
-    */
-    .footer-links {
-        list-style: none;
-        padding: 0;
-    }
-
-    /*
-      footer li styling - List items i footer
-      margin-bottom: 8px betyder afstand mellem links
-    */
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    /*
-      footer a styling - Links i footer
-      color: #ddd betyder lysegrå tekst
-      text-decoration: none fjerner underline
-      transition: color 0.3s betyder farveændring animeres
-    */
-    .footer-links a {
-        color: #ddd;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    /*
-      footer a:hover styling - Når man hover over link
-      color: #e67e22 betyder link bliver orange
-    */
-    .footer-links a:hover {
-        color: #e67e22;
-    }
-
-    /*
-      .footer-social styling - Social media links
-      display: flex betyder elementer ordnes horisontalt
-      gap: 10px betyder 10px afstand mellem knapper
-      margin-top: 15px betyder afstand over
-    */
-    .footer-social {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    /*
-      .social-link styling - Sociale media ikoner/knapper
-      display: inline-block betyder de kan have width/height
-      width: 35px, height: 35px betyder 35x35px kvadrat
-      background-color: #e67e22 betyder orange baggrund
-      color: white betyder hvid tekst/ikon
-      border-radius: 50% betyder cirkulær (halvdelen af 35px)
-      text-align: center betyder tekst/ikon er centreret
-      line-height: 35px betyder vertikal centering
-      cursor: pointer gør markør til hånd
-      transition: background-color 0.3s betyder farveændring animeres
-    */
-    .social-link {
-        display: inline-block;
-        width: 35px;
-        height: 35px;
-        background-color: #e67e22;
-        color: white;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 35px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    /*
-      .social-link:hover styling - Når man hover over social link
-      background-color: #d46f1a betyder mørkere orange
-    */
-    .social-link:hover {
-        background-color: #d46f1a;
-    }
-
-    /*
-      .footer-contact styling - Kontaktinformation
-      font-size: 13px betyder små tekst
-    */
-    .footer-contact {
-        font-size: 13px;
-        line-height: 1.8;
-    }
-
-    /*
-      .footer-contact a styling - Links i kontakt info
-      color: #ddd betyder lysegrå
-      text-decoration: none fjerner underline
-    */
-    .footer-contact a {
-        color: #ddd;
-        text-decoration: none;
-    }
-
-    /*
-      .footer-contact a:hover styling - Når man hover
-      color: #e67e22 betyder orange
-    */
-    .footer-contact a:hover {
-        color: #e67e22;
-    }
-
-    /*
-      .footer-bottom styling - Bunds sektion af footer
-      background-color: #1a1a1a betyder endnu mørkere
-      padding: 20px 0 betyder 20px top/bottom
-      text-align: center betyder tekst er centreret
-    */
-    .footer-bottom {
-        background-color: #1a1a1a;
-        padding: 20px 0;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    /*
-      .footer-copyright styling - Copyright tekst
-      font-size: 12px betyder mindre tekst
-      color: #999 betyder mørkegrå tekst
-      margin-bottom: 10px betyder afstand under
-    */
-    .footer-copyright {
-        font-size: 12px;
-        color: #999;
-        margin-bottom: 10px;
-    }
-
-    /*
-      .footer-bottom-links styling - Links i bunds sektion
-      font-size: 12px betyder mindre tekst
-    */
-    .footer-bottom-links {
-        font-size: 12px;
-    }
-
-    /*
-      .footer-bottom-links a styling - Links
-      color: #aaa betyder mørkegrå
-      text-decoration: none fjerner underline
-      margin: 0 8px betyder 8px afstand omkring
-    */
-    .footer-bottom-links a {
-        color: #aaa;
-        text-decoration: none;
-        margin: 0 8px;
-    }
-
-    /*
-      .footer-bottom-links a:hover styling
-      color: #e67e22 betyder orange ved hover
-    */
-    .footer-bottom-links a:hover {
-        color: #e67e22;
-    }
-
-    /*
-      .separator styling - Linie mellem links (|)
-      color: #555 betyder mørkegrå
-      margin: 0 5px betyder 5px omkring
-    */
-    .separator {
-        color: #555;
-        margin: 0 5px;
-    }
-
-    /* ============================================================= */
-    /* RESPONSIVE DESIGN - Mobil enheder */
-    /* ============================================================= */
-
-    /*
-      @media query for tablets/små mobiler
-      (max-width: 768px) betyder max 768px bred
-    */
-    @media (max-width: 768px) {
-        /*
-          .footer-top styling på mobile
-          grid-template-columns: repeat(2, 1fr) betyder 2 kolonner i stedet for 4
-        */
-        .footer-top {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-    }
-
-    /*
-      @media query for små mobiler
-      (max-width: 480px) betyder max 480px bred
-    */
-    @media (max-width: 480px) {
-        /*
-          .footer-top styling på små mobiler
-          grid-template-columns: 1fr betyder 1 kolonne (stacked)
-        */
-        .footer-top {
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        /*
-          footer.footer styling på små mobiler
-          padding: 20px 0 10px 0 betyder mindre padding
-        */
-        footer.footer {
-            padding: 20px 0 10px 0;
-        }
-    }
-</style>

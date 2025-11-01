@@ -1,209 +1,203 @@
-/* ============================================================= */
-/* MADBROEN - FOOTER STYLESHEET */
-/* ============================================================= */
+/* MADBROEN FOOTER */
 
-/* FOOTER MAIN */
-.site-footer {
-    background-color: #1a1a1a;
-    color: #ddd;
-    padding: 40px 20px 20px 20px;
-    margin-top: auto;
-    border-top: 2px solid #e67e22;
-    width: 100%;
+footer.site-footer {
+    background-color: #1a1a1a !important;
+    color: #ddd !important;
+    padding: 50px 20px 20px 20px !important;
+    border-top: 3px solid #e67e22 !important;
+    width: 100% !important;
+    margin-top: 50px !important;
 }
 
-/* FOOTER TOP */
-.footer-top {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #333;
+footer.site-footer .container-fluid {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
 }
 
-.footer-section {
-    margin-bottom: 20px;
+/* GRID */
+footer.site-footer .footer-top {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 40px !important;
+    margin-bottom: 40px !important;
+    padding-bottom: 40px !important;
+    border-bottom: 1px solid #333 !important;
 }
 
-/* FOOTER TITLES */
-.footer-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #fff;
-    margin-top: 0;
+/* FOOTER LOGO */
+footer.site-footer .footer-logo {
+    margin-bottom: 15px !important;
+    max-width: 60px !important;
 }
 
-.footer-description {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #aaa;
-    margin-bottom: 15px;
+footer.site-footer .footer-logo-img {
+    height: 25px !important;
+    width: 25px !important;
+    max-width: 60px !important;
+    display: block !important;
+    max-height: 25px !important;
 }
 
-/* FOOTER LINKS */
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+footer.site-footer .footer-title {
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    margin-bottom: 20px !important;
+    color: #ffffff !important;
+    margin-top: 0 !important;
 }
 
-.footer-links li {
-    margin-bottom: 8px;
+footer.site-footer .footer-description {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    color: #bbb !important;
+    margin-bottom: 15px !important;
 }
 
-.footer-links a {
-    color: #ddd;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 0.9rem;
+/* LINKS */
+footer.site-footer .footer-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.footer-links a:hover {
-    color: #e67e22;
+footer.site-footer .footer-links li {
+    margin-bottom: 12px !important;
 }
 
-/* SOCIAL ICONS */
-.footer-social {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+footer.site-footer .footer-links a {
+    color: #bbb !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease !important;
 }
 
-.social-icon {
-    display: inline-flex;
-    width: 35px;
-    height: 35px;
-    background-color: #e67e22;
-    color: white;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-weight: bold;
-    border: none;
+footer.site-footer .footer-links a:hover {
+    color: #e67e22 !important;
 }
 
-.social-icon:hover {
-    background-color: #d46f1a;
-    transform: scale(1.1);
+/* SOCIAL */
+footer.site-footer .footer-social {
+    display: flex !important;
+    gap: 10px !important;
+    margin-top: 15px !important;
 }
 
-/* CONTACT INFO */
-.footer-contact {
-    font-size: 0.9rem;
-    line-height: 1.7;
+footer.site-footer .social-icon {
+    display: inline-flex !important;
+    width: 38px !important;
+    height: 38px !important;
+    background-color: #e67e22 !important;
+    color: white !important;
+    border-radius: 50% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
 }
 
-.footer-contact p {
-    margin: 10px 0 5px 0;
-    color: #aaa;
-    font-weight: 600;
+footer.site-footer .social-icon:hover {
+    background-color: #d46f1a !important;
+    transform: translateY(-3px) !important;
 }
 
-.footer-contact a {
-    color: #ddd;
-    text-decoration: none;
-    transition: color 0.3s;
+/* CONTACT */
+footer.site-footer .footer-contact {
+    font-size: 0.9rem !important;
 }
 
-.footer-contact a:hover {
-    color: #e67e22;
+footer.site-footer .footer-contact p {
+    margin: 12px 0 5px 0 !important;
+    color: #bbb !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
 }
 
-.footer-contact span {
-    color: #aaa;
+footer.site-footer .footer-contact a {
+    color: #bbb !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
 }
 
-/* FOOTER BOTTOM */
-.footer-bottom {
-    background-color: #111;
-    padding: 20px;
-    margin-top: 20px;
-    border-top: 1px solid #333;
-    text-align: center;
+footer.site-footer .footer-contact a:hover {
+    color: #e67e22 !important;
 }
 
-.footer-copyright {
-    font-size: 0.8rem;
-    color: #999;
-    margin: 0;
+footer.site-footer .footer-contact span {
+    color: #bbb !important;
 }
 
-.footer-bottom-links {
-    font-size: 0.8rem;
-    margin-top: 10px;
+/* BOTTOM */
+footer.site-footer .footer-bottom {
+    background-color: #111 !important;
+    padding: 20px 0 !important;
+    border-top: 1px solid #333 !important;
+    text-align: center !important;
+    margin-top: 20px !important;
 }
 
-.footer-bottom-links a {
-    color: #aaa;
-    text-decoration: none;
-    margin: 0 5px;
-    transition: color 0.3s;
+footer.site-footer .footer-copyright {
+    font-size: 0.8rem !important;
+    color: #999 !important;
+    margin: 0 !important;
 }
 
-.footer-bottom-links a:hover {
-    color: #e67e22;
+footer.site-footer .footer-bottom-links {
+    font-size: 0.8rem !important;
+    margin-top: 10px !important;
 }
 
-.separator {
-    color: #555;
+footer.site-footer .footer-bottom-links a {
+    color: #999 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
 }
 
-/* BOOTSTRAP FIXES */
-.site-footer .container-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
+footer.site-footer .footer-bottom-links a:hover {
+    color: #e67e22 !important;
+}
+
+footer.site-footer .separator {
+    color: #555 !important;
+    margin: 0 8px !important;
 }
 
 /* RESPONSIVE */
+@media (max-width: 1024px) {
+    footer.site-footer .footer-top {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+}
+
 @media (max-width: 768px) {
-    .site-footer {
-        padding: 30px 15px 15px 15px;
+    footer.site-footer {
+        padding: 40px 15px 15px 15px !important;
     }
 
-    .footer-title {
-        font-size: 0.95rem;
+    footer.site-footer .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
     }
 
-    .footer-bottom {
-        padding: 15px;
+    footer.site-footer .footer-title {
+        font-size: 1rem !important;
     }
 }
 
 @media (max-width: 480px) {
-    .site-footer {
-        padding: 20px 10px 10px 10px;
+    footer.site-footer {
+        padding: 30px 10px 10px 10px !important;
     }
 
-    .footer-title {
-        font-size: 0.9rem;
-        margin-bottom: 10px;
+    footer.site-footer .footer-title {
+        font-size: 0.95rem !important;
     }
 
-    .footer-description {
-        font-size: 0.8rem;
-    }
-
-    .footer-links a {
-        font-size: 0.8rem;
-    }
-
-    .footer-bottom {
-        padding: 10px;
-    }
-
-    .footer-copyright {
-        font-size: 0.7rem;
-    }
-
-    .footer-bottom-links {
-        font-size: 0.7rem;
-    }
-
-    .social-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 12px;
+    footer.site-footer .social-icon {
+        width: 35px !important;
+        height: 35px !important;
     }
 }
