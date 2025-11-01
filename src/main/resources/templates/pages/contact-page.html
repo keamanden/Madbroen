@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt os</title>
+    <link rel="stylesheet" th:href="@{/css/headerstyle.css}">
+    <link rel="stylesheet" th:href="@{/css/contact-page.css}" href="/css/contact-page.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div th:replace="~{fragments/header :: siteHeader}"></div>
+<div class="page-contact">
+<main class="contact-container">
+    <h1>Kontakt os</h1>
+
+    <p>Har du spørgsmål eller andre henvendelser kan vi kontaktes på</p>
+
+    <p><strong>Telefon: +45 12 34 56 78</strong></p>
+
+    <p>Eller via nedenstående kontaktform:</p>
+
+    <form action="/contact" method="post" class="contact-form">
+        <div class="field-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Indtast email" required />
+        </div>
+
+        <div class="field-group">
+            <label for="message">Hvad handler henvendelsen sig om?</label>
+            <textarea id="message" name="message" rows="8" placeholder="Fx: spørgsmål, feedback eller forespørgsel" required></textarea>
+        </div>
+        </div>
+
+        <button type="submit">Send</button>
+    </form>
+</main>
+
+</body>
+</html>

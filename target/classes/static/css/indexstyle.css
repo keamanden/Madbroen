@@ -1,0 +1,82 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== Layout ===== */
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.welcome-box {
+    background-color: #181818;
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* ===== Typography ===== */
+.welcome-box h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff7b3f;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-box p {
+    font-size: 1rem;
+    text-align: justify;
+    color: #d4d4d4;
+    margin-bottom: 2.5rem;
+}
+
+/* ===== Button ===== */
+.cta-button {
+    background: linear-gradient(145deg, #1e3a2f, #1a3329);
+    border: 2px solid #334d3e;
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.8rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 3px 3px 8px #0a0a0a, -3px -3px 8px #242424;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background: linear-gradient(145deg, #2a5b45, #1f4233);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 10px #0a0a0a, -4px -4px 10px #2c2c2c;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .welcome-box {
+        padding: 2rem;
+    }
+
+    .welcome-box h1 {
+        font-size: 1.6rem;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+}

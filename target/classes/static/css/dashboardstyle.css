@@ -6,10 +6,9 @@
 .wrapperTablesDistribution{
     display: flex;
     gap: 20px;
-    position: absolute;
-    top: 310px;
-    flex: 1;
-    right: 0px;
+    position: fixed;
+    top: 380px;
+    right: 300px;
 
 }
 .layoutDashboardDistribution{
@@ -21,6 +20,7 @@ table, th, td{
     text-align: left;
     border: 1px solid;
     border-collapse: collapse;
+    padding: 0;
 
 }
 .containerDistribution{
@@ -40,12 +40,12 @@ table, th, td{
 td:nth-child(2){
     padding-right: 5px;
     padding-left: 5px;
-    padding-top: -10px;
-}
 
+}
+th:nth-child(1),
 td:nth-child(1){
     padding-right: 250px;
-    padding-left: 5px;
+    padding-left: 25px;
 
 }
 
@@ -58,8 +58,8 @@ td:nth-child(even){
 .vertical-line {
     border-left: 2px solid rgb(4, 4, 4);
     height: 600px;
-    position: fixed;
-    right: 795px;
+    position: absolute;
+    left: 30%;
     bottom: 0;
 
 
@@ -71,8 +71,8 @@ td:nth-child(even){
     display: flex;
     flex-direction: column;
     width: 300px;
-    position: fixed;
-    bottom: 200px;
+    position: absolute;
+    bottom: 100px;
 }
 
 .form-column label {
@@ -89,7 +89,7 @@ td:nth-child(even){
 
 .dropDownSoupKitchen{
     display: flex;
-    position: fixed;
+    position: absolute;
     right: 200px;
     bottom: 500px;
 }
@@ -98,7 +98,7 @@ td:nth-child(even){
 
 .donorCompanyPallets{
     display: flex;
-    position: fixed;
+    position: absolute;
     right: 200px;
     bottom: 500px;
 }
@@ -110,7 +110,8 @@ td:nth-child(even){
     width: 100vw;
     margin: 0px;
     bottom: 599px;
-    position: fixed;
+    position: absolute;
     border: none;
     left: 0px;
 }
+

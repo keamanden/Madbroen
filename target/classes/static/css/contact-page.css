@@ -1,0 +1,100 @@
+/* ======== Contact Page Scoped ======== */
+.page-contact body,
+.page-contact h1,
+.page-contact p,
+.page-contact input,
+.page-contact textarea,
+.page-contact label,
+.page-contact button {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* background */
+.page-contact body {
+    background: linear-gradient(135deg, #000000, #ffffff);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* contact box background */
+.page-contact .contact-container {
+    background-color: #BE5523;
+    width: min(900px, 92vw);
+    padding: 36px 44px;
+    border-radius: 12px;
+    box-shadow: 0 0 22px rgba(0,0,0,0.45);
+}
+
+/* title */
+.page-contact h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    color: #000000;
+}
+
+/* text */
+.page-contact p {
+    margin: 8px 0 14px;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+/* form design */
+.page-contact .contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px 28px;
+    margin-top: 8px;
+}
+
+/* text field */
+.page-contact .field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* input labels */
+.page-contact label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+/* input */
+.page-contact input[type="email"],
+.page-contact textarea {
+    background-color: #3b3b5e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* placeholder */
+.page-contact input::placeholder,
+.page-contact textarea::placeholder {
+    color: #c7c7d6;
+}
+
+/* focus state */
+.page-contact input[type="email"]:focus,
+.page-contact textarea:focus {
+    box-shadow: 0 0 0 2px #f4c43055;
+}
+
+/* text area */
+.page-contact textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* button */
+.page-contac
+

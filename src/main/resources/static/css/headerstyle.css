@@ -1,91 +1,135 @@
-/* ======== Base ======== */
-body {
-    margin: 0;
-    font-family: "Segoe UI", Roboto, sans-serif;
+/* ======== Header Global Scope ======== */
+header.site-header {
+    all: revert-layer;
     background-color: #121212;
+    border-bottom: 2px solid #2a2a2a;
+    font-family: "Segoe UI", Roboto, sans-serif;
     color: #ffffff;
 }
 
-/* ======== Header ======== */
-header {
-    background-color: #121212;
-    border-bottom: 2px solid #2a2a2a;
+header.site-header * {
+    box-sizing: border-box;
+    font-family: inherit;
+    color: inherit;
 }
 
-.navbar {
+/* ======== Navbar ======== */
+header.site-header .navbar {
     background-color: #121212 !important;
     padding: 0.8rem 2rem;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 /* ======== Logo ======== */
-.logo img {
-    width: 75px;
-    height: auto;
+header.site-header .logo img {
+    width: 75px !important;
+    height: auto !important;
     display: block;
 }
 
-/* ======== Nav links ======== */
-.navbar-nav .nav-link {
+
+/* ======== Nav Links ======== */
+header.site-header .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.5rem;
+}
+
+header.site-header .navbar-nav .nav-link {
     color: #ffffff !important;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: all 0.2s ease;
+    font-weight: 600 !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    background: transparent !important;
 }
 
-.navbar-nav .nav-link:hover {
-    background-color: #602d28;
+header.site-header .navbar-nav .nav-link:hover {
+    background-color: #602d28 !important;
     color: #ffffff !important;
 }
 
-.navbar-nav .nav-link.active {
-    background-color: #8a3b34;
+header.site-header .navbar-nav .nav-link.active {
+    background-color: #8a3b34 !important;
 }
 
-/* Keep nav items in a row beside logo */
-.navbar-nav {
-    flex-direction: row;
-    align-items: center;
+/* ======== Login/Logout Buttons ======== */
+header.site-header .login-container {
+    margin-left: auto !important;
 }
 
-/* ======== Logout Button ======== */
-.logout-container {
-    margin-left: auto;
+header.site-header .login-btn {
+    background-color: #602d28 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    padding: 0.5rem 1.2rem !important;
+    border: 2px solid #602d28 !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
 }
 
-.logout-btn {
-    background-color: #602d28;
-    color: #fff;
-    font-weight: 600;
-    padding: 0.5rem 1.2rem;
-    border: 2px solid #602d28;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.logout-btn:hover {
-    background-color: #8a3b34;
-    border-color: #8a3b34;
+header.site-header .login-btn:hover {
+    background-color: #8a3b34 !important;
+    border-color: #8a3b34 !important;
 }
 
 /* ======== Responsive ======== */
 @media (max-width: 992px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+    header.site-header .navbar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
     }
 
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
+    header.site-header .navbar-nav {
+        flex-direction: column !important;
+        width: 100% !important;
     }
 
-    .logout-container {
-        align-self: flex-end;
+    header.site-header .login-container {
+        align-self: flex-end !important;
+    }
+}
+
+/* ======== Light Theme (Auto) ======== */
+@media (prefers-color-scheme: light) {
+    header.site-header {
+        background-color: #f9f9f9;
+        border-bottom: 2px solid #d0d0d0;
+        color: #222222;
+    }
+
+    header.site-header .navbar {
+        background-color: #f9f9f9 !important;
+    }
+
+    header.site-header .navbar-nav .nav-link {
+        color: #222222 !important;
+    }
+
+    header.site-header .navbar-nav .nav-link:hover {
+        background-color: #f2d6d3 !important;
+        color: #222222 !important;
+    }
+
+    header.site-header .navbar-nav .nav-link.active {
+        background-color: #d69b94 !important;
+    }
+
+    header.site-header .login-btn {
+        background-color: #d69b94 !important;
+        color: #222222 !important;
+        border-color: #d69b94 !important;
+    }
+
+    header.site-header .login-btn:hover {
+        background-color: #c4847b !important;
+        border-color: #c4847b !important;
     }
 }

@@ -1,0 +1,79 @@
+
+/* background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #ffffff);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* login box background */
+.login-container {
+    background-color: #BE5523;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    width: 300px;
+}
+
+/* title */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #000000;
+}
+
+/* email/password titel */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* input */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: #3b3b5e;
+    color: white;
+}
+
+/* placeholder */
+input::placeholder {
+    color: #c7c7d6;
+}
+
+/* focus state */
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 0 2px #f4c43055;
+}
+
+/* button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #27AE60;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* button hover */
+button:hover {
+    background-color: #e0b820;
+}
