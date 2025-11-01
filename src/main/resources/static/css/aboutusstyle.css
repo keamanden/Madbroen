@@ -1,27 +1,20 @@
 /* ============================================================= */
-/* MADBROEN - ABOUT US PAGE STYLESHEET - FULL PAGE LAYOUT */
+/* MADBROEN - ABOUT US PAGE STYLESHEET - FULL PAGE */
 /* ============================================================= */
 
 /*
-  Dette er CSS filen for about_us.html siden
-  CSS står for "Cascading Style Sheets" og bruges til at style HTML elementer
-
-  Fordele ved at have CSS i en separat fil:
-  - Nemmere at vedligeholde
-  - Kan genbruges på andre HTML sider
-  - Gør HTML filen mere læsbar
-  - Bedre søgemaskine-optimalering (SEO)
+  Denne CSS fil styles About Us siden
+  Den bruger Bootstrap 5 klasserne for layout
+  Gør siden til full-page uden A4-form
 */
 
 /* ============================================================= */
-/* UNIVERSAL STYLING - Gælder for ALLE elementer på siden */
+/* UNIVERSAL STYLING */
 /* ============================================================= */
 
 /*
-  * selector betyder ALLE elementer på siden
-  margin: 0 fjerner default marginer omkring alle elementer
-  padding: 0 fjerner default polstring inden i alle elementer
-  box-sizing: border-box betyder at border og padding måles indenfor width/height
+  * selector betyder ALLE elementer
+  Resetter default margins og padding
 */
 * {
     margin: 0;
@@ -30,304 +23,270 @@
 }
 
 /* ============================================================= */
-/* HTML OG BODY STYLING - Fyld hele viewport */
+/* HTML OG BODY - FULL PAGE */
 /* ============================================================= */
 
 /*
   html element styling
-  height: 100vh betyder html fyldt hele viewport højde (100% af visible window)
-  width: 100% betyder det fyldt hele bredden
+  height: 100vh betyder 100% af viewport højde
+  width: 100% betyder 100% bredde
 */
 html {
     height: 100vh;
     width: 100%;
-    overflow: hidden;
 }
 
 /*
-  body element styling - Dette påvirker hele siden
+  body element styling
+  height: 100vh betyder 100% af viewport højde
+  width: 100% betyder 100% bredde
 
-  height: 100vh betyder body fyldt hele synlige område (viewport)
-  width: 100% betyder det fyldt hele bredden
+  display: flex betyder flexbox layout
+  flex-direction: column betyder lodret (header, main, footer stacked)
 
-  background-color: #f5f5f5
-    - Giver siden en lys grå baggrundsfarve
-    - #f5f5f5 er hex-kode for lysegrå (R=245, G=245, B=245)
+  background-color: #f8f9fa betyder meget lys grå (Bootstrap farve)
+  color: #333 betyder mørkegrå tekst
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto betyder sans-serif font
+  line-height: 1.5 betyder normal line-height
 
-  font-family: Arial, sans-serif
-    - Betyder vi bruger Arial som skrifttype
-    - sans-serif er backup hvis Arial ikke findes
-
-  line-height: 1.6
-    - Betyder der er 60% ekstra plads mellem linjerne
-    - Bedre læsbarhed
-
-  color: #333
-    - Betyder tekstfarven er mørkegrå (næsten sort)
-    - #333 = RGB(51, 51, 51)
-
-  display: flex betyder body bruger flexbox layout
-  flex-direction: column betyder elementer er arrangeret lodret (ovenpå hinanden)
-
-  overflow: hidden betyder hvis noget er for stort, bliver det ikke vist (ingen scrollbar på body)
+  overflow: hidden betyder ingen scrollbar på body selv
 */
 body {
     height: 100vh;
     width: 100%;
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
     display: flex;
     flex-direction: column;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
     overflow: hidden;
 }
 
 /* ============================================================= */
-/* MAIN ELEMENT STYLING - Voksende hovedindhold */
+/* MAIN CONTENT - VOKSENDE AREA */
 /* ============================================================= */
 
 /*
-  main element styling - Container for alt indholdet
+  main element styling
+  flex: 1 betyder main vokser og fyldt al ledigt plads
+  width: 100% betyder det fyldt hele bredden
+  overflow-y: auto betyder scrollbar INDEN i main hvis indhold er for langt
+  overflow-x: hidden betyder ingen horizontal scrollbar
 
-  flex: 1 betyder main vokser og fylder al ledigt plads
-  Dette sikrer at main fylder hele området mellem header og footer
-
-  width: 100% betyder main fyldt hele bredden af viewport
-
-  overflow-y: auto betyder hvis indholdet er for langt, bliver der scrollbar INDEN I main
-  (ikke på hele siden)
-
-  display: flex betyder main bruger flexbox layout
+  display: flex betyder flexbox
   justify-content: center betyder indholdet er centreret horisontalt
   align-items: flex-start betyder indholdet starter fra toppen
 
-  padding: 40px 20px betyder 40px top/bottom, 20px left/right
-  Vigtig luft rundt omkring indholdet
+  padding: 30px 0 betyder 30px top/bottom
 */
 main {
     flex: 1;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px 20px;
+    padding: 30px 0;
 }
 
 /* ============================================================= */
-/* CONTENT-BOX STYLING - Container omkring alt indholdet */
+/* CONTAINER STYLING */
 /* ============================================================= */
 
 /*
-  .content-box class styling - Hvid boks omkring indholdet
-
-  background-color: white
-    - Baggrund er hvid
-
-  padding: 40px
-    - 40px luft rundt omkring indholdet indenfor boksen
-    - Gør indholdet ikke skal gå helt til kanten af boksen
-
-  border: 1px solid #ddd
-    - 1px solid grå linje omkring boksen
-    - Giver boksen en synlig kant
-
-  border-radius: 8px
-    - Hjørnerne er afrundede (8px radius)
-    - Moderne design i stedet for firkantede hjørner
-
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
-    - Skygge omkring boksen for dybdeeffekt
-    - 0 2px betyder skyggen er 2px ned
-    - 8px betyder hvor stor skyggen er
-    - rgba(0, 0, 0, 0.1) betyder sort med 10% gennemsigtighed
-
-  width: 100% betyder boksen fyldt hele main bredden
-  max-width: 1000px betyder boksen max bliver 1000px bred
-
-  margin: 0 auto betyder boksen er centreret
+  .container-fluid from Bootstrap
+  Gør indholdet fylde hele bredden
+  Vi override det for About Us siden
 */
-.content-box {
+main .container-fluid,
+main .container {
+    width: 100%;
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ============================================================= */
+/* CONTENT BOX */
+/* ============================================================= */
+
+/*
+  .content-box eller main container
+  background-color: white betyder hvid baggrund
+  padding: 40px betyder 40px luft rundt omkring
+  border-radius: 8px betyder afrundede hjørner
+  box-shadow betyder skygge for dybdeeffekt
+
+  margin: 0 auto betyder centreret
+*/
+main > * {
     background-color: white;
     padding: 40px;
-    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
 }
 
 /* ============================================================= */
-/* OVERSKRIFT STYLING - H1 og H2 */
+/* H1 OVERSKRIFT */
 /* ============================================================= */
 
 /*
-  h1 element styling - Hovedoverskrift
+  h1 styling - Hovedoverskrift
+  font-size: 2.5rem betyder 40px (responsiv)
+  color: #333 betyder mørkegrå
+  margin-bottom: 30px betyder afstand under
 
-  font-size: 32px
-    - Teksten er 32px høj (STOR)
-
-  color: #333
-    - Mørkegrå farve
-
-  margin-bottom: 20px
-    - 20px luft under overskriften
-
-  border-bottom: 2px solid #e67e22
-    - 2px orange linje under (sepeator)
-    - #e67e22 er orange farven fra Madbroen logo'et
-
-  padding-bottom: 15px
-    - 15px luft mellem tekst og linje
+  background-color: #d4e8f7 betyder lysebhå baggrundsfarve
+  padding: 20px betyder indre luft
+  border-radius: 8px betyder afrundede hjørner
+  border-bottom: 3px solid #e67e22 betyder orange linje under
 */
 h1 {
-    font-size: 32px;
+    font-size: 2.5rem;
     color: #333;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e67e22;
-    padding-bottom: 15px;
+    margin-bottom: 30px;
+    background-color: #d4e8f7;
+    padding: 20px;
+    border-radius: 8px;
+    border-bottom: 3px solid #e67e22;
 }
 
+/* ============================================================= */
+/* H2 UNDEROVERSKRIFTER */
+/* ============================================================= */
+
 /*
-  h2 element styling - Underoverskrifter (sektioner)
-
-  font-size: 24px
-    - Teksten er 24px høj (mindre end h1)
-
-  color: #333
-    - Mørkegrå farve
-
-  margin-top: 30px
-    - 30px luft før overskriften
-    - Skaber afstand mellem sektioner
-
-  margin-bottom: 15px
-    - 15px luft efter overskriften
+  h2 styling - Underoverskrifter (sektioner)
+  font-size: 1.75rem betyder 28px (responsiv)
+  color: #333 betyder mørkegrå
+  margin-top: 40px betyder afstand før
+  margin-bottom: 20px betyder afstand efter
+  font-weight: 600 betyder semi-bold
 */
 h2 {
-    font-size: 24px;
+    font-size: 1.75rem;
     color: #333;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 /* ============================================================= */
-/* PARAGRAF STYLING - P elementer */
+/* PARAGRAFER */
 /* ============================================================= */
 
 /*
-  p element styling - Almindelige tekst-afsnit
-
-  margin-bottom: 15px
-    - 15px luft under hver paragraf
-    - Skaber afstand mellem afsnit
-
-  text-align: justify
-    - Teksten justeres på begge sider
-    - Giver et mere formelt udseende
+  p styling - Almindelig tekst
+  font-size: 1rem betyder 16px
+  line-height: 1.6 betyder god mellemrum mellem linjer
+  margin-bottom: 15px betyder afstand under
+  color: #555 betyder mørkegrå tekst
+  text-align: justify betyder justeret på begge sider
 */
 p {
+    font-size: 1rem;
+    line-height: 1.6;
     margin-bottom: 15px;
+    color: #555;
     text-align: justify;
 }
 
+/* ============================================================= */
+/* INTRO TEXT */
+/* ============================================================= */
+
 /*
-  .intro-text class styling - Særlig stil for introduktionstekst
-  Bruges på første paragraf for at gøre den mere prominent
-
-  font-size: 18px
-    - Teksten er større end normal (18px vs standard)
-
-  color: #666
-    - Mørkegrå farve (mørkere end det normale grå)
-
-  font-style: italic
-    - Teksten er skrå/kursiv
-    - Visuelt signal om at det er vigtig tekst
-
-  margin-bottom: 30px
-    - 30px luft under (mere end normal)
-    - Skaber extra afstand før næste sektion
+  .intro-text class styling - Introduktionstekst
+  font-size: 1.125rem betyder 18px (større)
+  font-style: italic betyder kursiv
+  color: #666 betyder mørkegrå
+  margin-bottom: 30px betyder ekstra afstand under
 */
 .intro-text {
-    font-size: 18px;
-    color: #666;
+    font-size: 1.125rem;
     font-style: italic;
+    color: #666;
     margin-bottom: 30px;
 }
 
 /* ============================================================= */
-/* LISTE STYLING - UL og LI elementer */
+/* LISTER */
 /* ============================================================= */
 
 /*
-  ul element styling - Uordnet liste (med punkter/bullets)
-
-  margin-left: 30px
-    - Listen indrykkedes 30px til højre
-    - Standard liste-indrykning
-
-  margin-bottom: 20px
-    - 20px luft under listen
+  ul styling - Uordnet liste
+  margin-left: 25px betyder indrykning til højre
+  margin-bottom: 20px betyder afstand under
+  padding-left: 15px betyder extra indre indrykning
 */
 ul {
-    margin-left: 30px;
+    margin-left: 25px;
     margin-bottom: 20px;
+    padding-left: 15px;
 }
 
 /*
-  li element styling - Individuelle listepoint
-
-  margin-bottom: 10px
-    - 10px luft mellem hvert punkt
-    - Gør listen lettere at læse
-
-  line-height: 1.8 betyder ekstra line-height for list items
+  li styling - Liste elementer
+  margin-bottom: 12px betyder afstand mellem items
+  font-size: 1rem betyder normal størrelse
+  line-height: 1.6 betyder god spacing
 */
 li {
-    margin-bottom: 10px;
-    line-height: 1.8;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/*
+  li strong - Fed tekst i list items
+  color: #333 betyder mørkegrå
+*/
+li strong {
+    color: #333;
+    font-weight: 600;
 }
 
 /* ============================================================= */
-/* HIGHLIGHT/FREMHÆVET TEKST STYLING */
+/* HIGHLIGHT BOX */
 /* ============================================================= */
 
 /*
-  .highlight class styling - Vigtig information i gul boks
-
-  background-color: #fff3cd
-    - Lysegul baggrundsfarve
-    - Gør at vigtige tal falder i øjet
-
-  color: #856404
-    - Mørkebrun tekstfarve
-    - Giver god kontrast mod gul baggrund
-
-  padding: 15px
-    - 15px luft rundt omkring indholdet indenfor boksen
-
-  border-left: 4px solid #ffc107
-    - 4px gult strip på venstre side
-    - Visuelt element der signalerer vigtighed
-    - #ffc107 er et orange-gult
-
-  border-radius: 4px
-    - Hjørnerne er let afrundede
-
-  margin: 20px 0
-    - 20px luft over og under
-    - 0 luft til venstre og højre
+  .highlight styling - Vigtig information i boks
+  background-color: #fff3cd betyder lysegul
+  border-left: 4px solid #ffc107 betyder gult strip på siden
+  padding: 20px betyder indre luft
+  margin: 30px 0 betyder 30px over/under
+  border-radius: 4px betyder let afrundede hjørner
+  color: #856404 betyder mørkebrun tekst
 */
 .highlight {
     background-color: #fff3cd;
-    color: #856404;
-    padding: 15px;
     border-left: 4px solid #ffc107;
+    padding: 20px;
+    margin: 30px 0;
     border-radius: 4px;
-    margin: 20px 0;
+    color: #856404;
+}
+
+/*
+  .highlight p styling - Tekst i highlight
+  margin-bottom: 0 fjerner margin siden det er i en boks
+*/
+.highlight p {
+    margin-bottom: 0;
+}
+
+/*
+  .highlight strong styling - Fed tekst i highlight
+  color: #856404 betyder mørkebrun
+*/
+.highlight strong {
+    color: #856404;
 }
 
 /* ============================================================= */
@@ -335,160 +294,200 @@ li {
 /* ============================================================= */
 
 /*
-  .cta-button class styling - "Call to Action" knap
-  CTA = "Call To Action" = opfordring til handling
-
-  background-color: #90EE90
-    - Grøn baggrundsfarve
-    - #90EE90 er "light green"
-
-  color: #333
-    - Mørkegrå tekstfarve
-
-  padding: 15px 30px
-    - 15px top/bottom, 30px left/right
-    - Gør knappen stor nok til at kunne klikkes let
-
-  border: 1px solid #ddd
-    - 1px grå kant omkring knappen
-
-  border-radius: 4px
-    - Afrundede hjørner
-
-  cursor: pointer
-    - Pilen ændres til en hånd når man hover over knappen
-    - Signal om at det er klikbart
-
-  font-size: 16px
-    - Tekst på knappen er 16px (større end normal)
-
-  transition: background-color 0.3s
-    - Når farven ændrer sig (fx ved hover), animeres det over 0.3 sekunder
-    - Giver en glat effekt i stedet for pludselig farveændring
-
-  margin-top: 30px
-    - 30px luft over knappen
-
-  display: inline-block betyder knappen er på linje (ikke hele bredden)
+  .cta-button styling - Call-to-Action knap
+  background-color: #90EE90 betyder grøn
+  color: #333 betyder mørkegrå tekst
+  border: none fjerner default border
+  padding: 12px 30px betyder 12px top/bottom, 30px left/right
+  border-radius: 4px betyder afrundede hjørner
+  font-size: 1rem betyder 16px
+  font-weight: 600 betyder semi-bold
+  cursor: pointer gør markør til hånd
+  transition: all 0.3s betyder alle properties animeres
+  display: inline-block betyder det er et blok element på linje
+  margin-top: 30px betyder afstand over
 */
 .cta-button {
     background-color: #90EE90;
     color: #333;
-    padding: 15px 30px;
-    border: 1px solid #ddd;
+    border: none;
+    padding: 12px 30px;
     border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    margin-top: 30px;
+    transition: all 0.3s;
     display: inline-block;
+    margin-top: 30px;
 }
 
 /*
-  .cta-button:hover styling - Når man holder musen over knappen
-  :hover betyder "når man hover over dette element"
-
-  background-color: #7CCD7C
-    - Mørkere grøn farve
-    - Signal til brugeren om at knappen er interaktiv
+  .cta-button:hover styling - Når man hover
+  background-color: #7CCD7C betyder mørkere grøn
+  transform: translateY(-2px) betyder knappen bevæger sig op lidt
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) betyder større skygge
 */
 .cta-button:hover {
     background-color: #7CCD7C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*
+  .cta-button:active styling - Når man klikker
+  transform: translateY(0) betyder knappen går tilbage til normal position
+*/
+.cta-button:active {
+    transform: translateY(0);
 }
 
 /* ============================================================= */
-/* RESPONSIVE DESIGN - Mobil enheder */
+/* RESPONSIVE DESIGN - Tablets */
 /* ============================================================= */
 
-/*
-  @media query - Dette betyder "kun hvis denne betingelse er sand"
-  (max-width: 768px) betyder "kun hvis skærmen er max 768px bred"
-
-  768px er breakpoint for tablets og større mobiler
-  Under denne bredde ønsker vi anderledes styling for bedre læsbarhed
-*/
 @media (max-width: 768px) {
     /*
-      main styling på mobile enheder
-      padding: 20px 10px betyder mindre luft til siderne på små skærme
+      main styling på tablet
+      padding: 20px 0 betyder mindre padding
     */
     main {
-        padding: 20px 10px;
+        padding: 20px 0;
     }
 
     /*
-      .content-box styling på mobile enheder
-      padding: 20px betyder mindre luft indenfor boksen
+      main > * styling på tablet
+      padding: 25px betyder mindre indre padding
     */
-    .content-box {
-        padding: 20px;
+    main > * {
+        padding: 25px;
     }
 
     /*
-      h1 styling på mobile enheder
-      font-size: 24px betyder mindre overskrift (var 32px før)
-    */
-    h1 {
-        font-size: 24px;
-    }
-
-    /*
-      h2 styling på mobile enheder
-      font-size: 20px betyder mindre underoverskrift (var 24px før)
-    */
-    h2 {
-        font-size: 20px;
-    }
-
-    /*
-      .intro-text styling på mobile enheder
-      font-size: 16px betyder mindre tekst (var 18px før)
-    */
-    .intro-text {
-        font-size: 16px;
-    }
-}
-
-/* ============================================================= */
-/* RESPONSIVE DESIGN - Små mobiler */
-/* ============================================================= */
-
-/*
-  @media query for små mobiler
-  (max-width: 480px) betyder "kun hvis skærmen er max 480px bred"
-*/
-@media (max-width: 480px) {
-    /*
-      .content-box styling på små mobiler
+      h1 styling på tablet
+      font-size: 2rem betyder mindre (var 2.5rem)
       padding: 15px betyder mindre padding
     */
-    .content-box {
+    h1 {
+        font-size: 2rem;
         padding: 15px;
     }
 
     /*
-      .cta-button styling på små mobiler
-      width: 100% betyder knappen fylder hele bredden
-      padding: 12px 20px betyder mindre polstring
+      h2 styling på tablet
+      font-size: 1.5rem betyder mindre (var 1.75rem)
+      margin-top: 30px betyder mindre margin
     */
-    .cta-button {
-        width: 100%;
-        padding: 12px 20px;
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 30px;
     }
 
     /*
-      ul styling på små mobiler
-      margin-left: 20px betyder mindre indrykning (var 30px før)
+      p styling på tablet
+      font-size: 0.95rem betyder mindre
+    */
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================================= */
+/* RESPONSIVE DESIGN - Mobile */
+/* ============================================================= */
+
+@media (max-width: 480px) {
+    /*
+      main styling på mobile
+      padding: 15px 0 betyder minimal padding
+    */
+    main {
+        padding: 15px 0;
+    }
+
+    /*
+      main > * styling på mobile
+      padding: 20px betyder minimal indre padding
+    */
+    main > * {
+        padding: 20px;
+        border-radius: 4px;
+    }
+
+    /*
+      h1 styling på mobile
+      font-size: 1.5rem betyder muito mindre (var 2.5rem)
+      padding: 12px betyder minimal padding
+    */
+    h1 {
+        font-size: 1.5rem;
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    /*
+      h2 styling på mobile
+      font-size: 1.25rem betyder mindre (var 1.75rem)
+      margin-top: 25px betyder mindre margin
+    */
+    h2 {
+        font-size: 1.25rem;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    /*
+      p styling på mobile
+      font-size: 0.9rem betyder mindre
+      text-align: left fjerner justify da det ser dårligt ud på små skærme
+    */
+    p {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+
+    /*
+      .intro-text styling på mobile
+      font-size: 1rem betyder mindre (var 1.125rem)
+    */
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    /*
+      ul styling på mobile
+      margin-left: 20px betyder mindre indrykning
     */
     ul {
         margin-left: 20px;
     }
 
     /*
-      p styling på små mobiler
-      font-size: 14px betyder mindre tekst
+      li styling på mobile
+      font-size: 0.9rem betyder mindre
+      margin-bottom: 10px betyder mindre afstand
     */
-    p {
-        font-size: 14px;
+    li {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    /*
+      .highlight styling på mobile
+      padding: 15px betyder mindre padding
+      margin: 20px 0 betyder mindre margin
+    */
+    .highlight {
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    /*
+      .cta-button styling på mobile
+      width: 100% betyder knappen fyldt hele bredden
+      padding: 12px 20px betyder mindre padding
+    */
+    .cta-button {
+        width: 100%;
+        padding: 12px 20px;
     }
 }
