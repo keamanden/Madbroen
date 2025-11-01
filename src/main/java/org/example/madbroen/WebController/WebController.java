@@ -80,7 +80,7 @@ public class WebController {
         return "redirect:/contact-page"; //TODO: maybe make a "thank you" page?
     }
 
-    @GetMapping("/test")
+    @GetMapping("/dashboard")
     public String showTestPage(Model model) {
         model.addAttribute("user", new TestUser("Acme A/S", "Main Street 1", "info@acme.dk",
                 12345678, 87654321, "John Doe",
