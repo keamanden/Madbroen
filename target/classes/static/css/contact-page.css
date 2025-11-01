@@ -117,3 +117,11 @@ body {
 .page-contact .contact-form > button[type="submit"]:hover {
   background-color: #e0b820;
 }
+
+/*Bagrundsbillede*/
+body {
+    background: url('/img/baggrund.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
