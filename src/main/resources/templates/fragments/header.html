@@ -14,7 +14,7 @@
         <div class="container-fluid justify-content-between align-items-center">
 
             <!-- Logo -->
-            <a th:href="@{/static}" class="logo d-flex align-items-center me-3">
+            <a th:href="@{/}" class="logo d-flex align-items-center me-3">
                 <img th:src="@{/img/madbro.png}" alt="Madbroen Logo">
             </a>
 
@@ -30,8 +30,9 @@
 
             <!-- Login Button -->
             <div class="login-container">
-                <button class="login-btn">Log Ind</button>
+                <a th:href="@{/login.html}" class="login-btn">Log Ind</a>
             </div>
+
 
         </div>
     </nav>

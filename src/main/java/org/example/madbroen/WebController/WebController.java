@@ -17,7 +17,7 @@ public class WebController {
         return "pages/" + page;
     }
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index() {
         return "pages/index";
     }
