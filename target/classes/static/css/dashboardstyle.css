@@ -8,7 +8,7 @@
 .wrapperTablesDistribution{
     display: flex;
     gap: 20px;
-
+    width: auto;
     top: 440px;
     right: 200px;
     caption-side: top;
@@ -74,6 +74,7 @@ tr:nth-child(even){
 /*Vertikal linje til opdeling af siden*/
 
 .vertical-line {
+
     border-left: 2px solid rgb(4, 4, 4);
     height: 600px;
 
@@ -81,14 +82,15 @@ tr:nth-child(even){
     bottom: 0;
 
 
-/*Styling af ændring af egne oplysninger*/
+
 
 }
 
 .form-column {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: auto;
+    max-width: 300px;
 
     bottom: 100px;
     left: 10px;
@@ -139,10 +141,13 @@ body{
 
 .dashboard-wrapper{
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    gap: 4rem;
+
 }
 
 .site-footer {
@@ -153,10 +158,20 @@ body{
 
 .left-elements{
     flex: 1;
+    display: flex;
     margin-left: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-right: 30px;
+    gap: 8rem;
 }
 .right-elements{
-    flex: 2;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
 }
 .horizontal-line {
     height: 2px;
@@ -165,4 +180,5 @@ body{
     margin-top: 2rem;
     opacity: 1;
     margin-bottom: 0;
+
 }
