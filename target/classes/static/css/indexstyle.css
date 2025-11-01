@@ -22,7 +22,7 @@ body {
 }
 
 .welcome-box {
-    background-color: #181818;
+    background-color: #BE5523;
     padding: 3rem;
     border-radius: 12px;
     max-width: 700px;
@@ -35,7 +35,7 @@ body {
 .welcome-box h1 {
     font-size: 2rem;
     font-weight: bold;
-    color: #ff7b3f;
+    color: #000000;
     margin-bottom: 1.5rem;
 }
 
