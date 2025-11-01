@@ -101,7 +101,7 @@ body {
 
 /* button */
 .page-contact .contact-form > button[type="submit"] {
-  width: auto;                   /* was 100% */
+  width: auto;
   padding: 12px 20px;
   background-color: #27AE60;
   color: #000000;
@@ -109,7 +109,7 @@ body {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  justify-self: end;             /* right edge of the form grid */
+  justify-self: end;
   transition: background-color 0.3s;
 }
 
