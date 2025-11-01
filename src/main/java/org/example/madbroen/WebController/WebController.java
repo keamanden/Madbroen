@@ -84,7 +84,7 @@ public class WebController {
     public String showTestPage(Model model) {
         model.addAttribute("user", new TestUser("Acme A/S", "Main Street 1", "info@acme.dk",
                 12345678, 87654321, "John Doe",
-                "soupKitchen", 42, true, "Some input"));
+                "distributionCompany", 42, true, "Some input"));
 
         List<TestUser> donorCompanys = new ArrayList<TestUser>();
         List<TestUser> soupKitchens = new ArrayList<TestUser>();
@@ -96,7 +96,7 @@ public class WebController {
                 87654321,
                 "John Doe",
                 "donorCompany",
-                1,          // palletCount
+                1,
                 true,
                 "First test input"
         ));
