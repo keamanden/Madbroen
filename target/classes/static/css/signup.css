@@ -1,26 +1,36 @@
-
-    /* ======== Signup Page Scoped ======== */
-    .page-signup body,
-    .page-signup h1,
-    .page-signup p,
-    .page-signup input,
-    .page-signup select,
-    .page-signup small,
-    .page-signup button {
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-
     /* background */
-    .page-signup body {
+    body {
+        font-family: Arial, sans-serif;
         background: linear-gradient(135deg, #000000, #ffffff);
         color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
         margin: 0;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
+
+    /* header size */
+    .site-header {
+        width: 100%;
+    }
+
+    /* signup box */
+    .page-signup {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    /* signup text */
+    .page-signup * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
 
     /* signup container */
     .page-signup .signup-container {
@@ -118,3 +128,12 @@
     .page-signup button:hover {
         background-color: #e0b820;
     }
+
+    /* mobile responsiveness ... */
+    @media (max-width: 720px) {
+      .page-signup .signup-form {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
