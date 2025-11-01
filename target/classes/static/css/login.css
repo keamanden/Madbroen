@@ -5,19 +5,25 @@ body {
     background: linear-gradient(135deg, #000000, #ffffff);
     color: #fff;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
     height: 100vh;
     margin: 0;
 }
 
+.site-header {
+    width: 100%;
+}
+
 /* login box background */
-.login-container {
+body > .login-container {
     background-color: #BE5523;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     width: 300px;
+    margin: 32px auto 0;
 }
 
 /* title */
