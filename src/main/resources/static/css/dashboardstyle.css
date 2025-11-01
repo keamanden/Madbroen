@@ -72,7 +72,7 @@ td:nth-child(even){
     flex-direction: column;
     width: 300px;
     position: absolute;
-    bottom: 200px;
+    bottom: 100px;
 }
 
 .form-column label {
