@@ -1,29 +1,43 @@
 
-/* background */
+html, body {
+    height: 100%; margin: 0;
+}
+
+/* bagground etc */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #000000, #ffffff);
+    background: url('/img/baggrund.png') no-repeat center center fixed,
+                linear-gradient(135deg, #000000, #ffffff);
+    background-size: cover, 100% 100%;
+
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
 }
 
 .site-header {
     width: 100%;
 }
 
+/* page content area */
+.login-page {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+}
+
 /* login box background */
-body > .login-container {
+.login-page .login-container {
     background-color: #BE5523;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
     width: 300px;
-    margin: 32px auto 0;
 }
 
 /* title */
@@ -82,10 +96,4 @@ button {
 /* button hover */
 button:hover {
     background-color: #e0b820;
-}
-body {
-    background: url('/img/baggrund.png') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
 }

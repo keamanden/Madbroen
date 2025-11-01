@@ -3,10 +3,10 @@
 footer.site-footer {
     background-color: #1a1a1a !important;
     color: #ddd !important;
-    padding: 50px 20px 20px 20px !important;
+    padding: 16px 20px 10px !important;
     border-top: 3px solid #e67e22 !important;
     width: 100% !important;
-    margin-top: 50px !important;
+    margin-top: 24px !important;
 }
 
 footer.site-footer .container-fluid {
@@ -18,10 +18,10 @@ footer.site-footer .container-fluid {
 /* GRID */
 footer.site-footer .footer-top {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 40px !important;
-    margin-bottom: 40px !important;
-    padding-bottom: 40px !important;
+    grid-template-columns: 2fr 1fr 1fr 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 12px !important;
     border-bottom: 1px solid #333 !important;
 }
 
@@ -40,18 +40,19 @@ footer.site-footer .footer-logo-img {
 }
 
 footer.site-footer .footer-title {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     font-weight: bold !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 10px !important;
     color: #ffffff !important;
     margin-top: 0 !important;
 }
 
 footer.site-footer .footer-description {
-    font-size: 0.9rem !important;
-    line-height: 1.6 !important;
+    font-size: 0.85rem !important;
+    line-height: 1.35 !important;
     color: #bbb !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 10px !important;
+    max-width: 40ch !important;
 }
 
 /* LINKS */
@@ -62,7 +63,7 @@ footer.site-footer .footer-links {
 }
 
 footer.site-footer .footer-links li {
-    margin-bottom: 12px !important;
+    margin-bottom: 6px !important;
 }
 
 footer.site-footer .footer-links a {
@@ -132,16 +133,16 @@ footer.site-footer .footer-contact span {
 /* BOTTOM */
 footer.site-footer .footer-bottom {
     background-color: #111 !important;
-    padding: 20px 0 !important;
+    padding: 8px 0 !important;
     border-top: 1px solid #333 !important;
     text-align: center !important;
-    margin-top: 20px !important;
+    margin-top: 8px !important;
 }
 
 footer.site-footer .footer-copyright {
-    font-size: 0.8rem !important;
+    font-size: 0.78rem !important;
     color: #999 !important;
-    margin: 0 !important;
+    margin: 6 !important;
 }
 
 footer.site-footer .footer-bottom-links {
