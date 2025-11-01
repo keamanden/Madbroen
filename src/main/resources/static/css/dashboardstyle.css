@@ -21,6 +21,7 @@
 
 
 caption{
+    margin-top: 2rem;
     caption-side: top;
     font-weight: bold;
     color: black;
@@ -41,7 +42,7 @@ table, th, td{
 .containerDistribution{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: normal;
     gap: 30px;
 
 }
@@ -94,6 +95,7 @@ tr:nth-child(even){
 
     bottom: 100px;
     left: 10px;
+    margin-top: 2rem;
 
 }
 
@@ -159,12 +161,14 @@ body{
 .left-elements{
     flex: 1;
     display: flex;
-    margin-left: 10px;
+
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
-    margin-right: 30px;
-    gap: 8rem;
+    margin-left: 2rem;
+    gap: 4rem;
+
+
 }
 .right-elements{
     flex: 1;
@@ -172,6 +176,8 @@ body{
     justify-content: flex-end;
     align-items: flex-start;
     flex-direction: column;
+    margin-right: 2rem;
+
 }
 .horizontal-line {
     height: 2px;
