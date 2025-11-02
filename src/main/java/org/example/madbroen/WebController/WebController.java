@@ -34,7 +34,7 @@ public class WebController {
             @RequestParam String email,
             @RequestParam String password) {
         // no real auth yet — just redirects somewhere else
-        return "redirect:/contact-page"; //TODO: change to frontpage later
+        return "redirect:/index";
     }
 
     //get mapping for signup
@@ -57,7 +57,7 @@ public class WebController {
             @RequestParam String confirmPassword
     ) {
         // no method to save data — just redirects somewhere else
-        return "redirect:/contact-page"; //TODO: change to frontpage later
+        return "redirect:/index";
     }
 
     //get mapping for contact page
@@ -77,7 +77,7 @@ public class WebController {
         System.out.println("Besked: " + message);
 
         // just redirects somewhere else
-        return "redirect:/contact-page"; //TODO: maybe make a "thank you" page?
+        return "redirect:/index";
     }
 
     @GetMapping("/dashboard")
